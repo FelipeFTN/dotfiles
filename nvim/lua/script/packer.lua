@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
   -- Personal plugins
   use 'vim-airline/vim-airline'
   use 'preservim/nerdtree'
-  use 'ghifarit53/tokyonight-vim'
+  use 'folke/tokyonight.nvim' 
   use 'Yggdroot/indentLine'
   use 'psliwka/vim-smoothie'
   use 'mbbill/undotree'
