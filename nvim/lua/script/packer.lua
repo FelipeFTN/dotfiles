@@ -15,7 +15,6 @@ return require('packer').startup(function(use)
   use 'psliwka/vim-smoothie'
   use 'mbbill/undotree'
   use 'tpope/vim-commentary'
-  use 'tiagofumo/vim-nerdtree-syntax-highlight'
   use 'ryanoasis/vim-devicons'
   --  use 'neoclide/coc.nvim'
   use 'jiangmiao/auto-pairs'
