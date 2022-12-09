@@ -8,17 +8,17 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Personal plugins
-  use 'vim-airline/vim-airline'
-  use 'preservim/nerdtree'
-  use 'folke/tokyonight.nvim' 
-  use 'Yggdroot/indentLine'
-  use 'psliwka/vim-smoothie'
-  use 'mbbill/undotree'
-  use 'tpope/vim-commentary'
-  use 'ryanoasis/vim-devicons'
-  --  use 'neoclide/coc.nvim'
-  use 'jiangmiao/auto-pairs'
-  use 'yuezk/vim-js'
-  use 'HerringtonDarkholme/yats.vim'
-  use 'maxmellon/vim-jsx-pretty'
+  use 'vim-airline/vim-airline'      -- Statusbar
+  use 'folke/tokyonight.nvim'	     -- A better theme, but bugged 
+  use 'tpope/vim-commentary'         -- Better commentary adding
+  use '/morhetz/gruvbox'	         -- Beautiful theme
+  use 'Yggdroot/indentLine'          -- Auto indentation
+  use 'psliwka/vim-smoothie'		 -- Makes scrolling smooth
+  use 'mbbill/undotree'              -- Undo History
+  use 'ryanoasis/vim-devicons'       -- Better icons
+  use 'jiangmiao/auto-pairs'         -- Autoclosing Brackets
+  use 'yuezk/vim-js'                 -- Javascript Syntax
+  use 'HerringtonDarkholme/yats.vim' -- Typescript Syntax
+  -- use 'preservim/nerdtree'        -- File manager
+  -- use 'neoclide/coc.nvim'         -- Auto Complete
 end)
