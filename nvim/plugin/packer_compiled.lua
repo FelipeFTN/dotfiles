@@ -79,15 +79,15 @@ _G.packer_plugins = {
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
+  gruvbox = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com//morhetz/gruvbox"
+  },
   indentLine = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/indentLine",
     url = "https://github.com/Yggdroot/indentLine"
-  },
-  nerdtree = {
-    loaded = true,
-    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/nerdtree",
-    url = "https://github.com/preservim/nerdtree"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -123,16 +123,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-js",
     url = "https://github.com/yuezk/vim-js"
-  },
-  ["vim-jsx-pretty"] = {
-    loaded = true,
-    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty",
-    url = "https://github.com/maxmellon/vim-jsx-pretty"
-  },
-  ["vim-nerdtree-syntax-highlight"] = {
-    loaded = true,
-    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
-    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
   },
   ["vim-smoothie"] = {
     loaded = true,
