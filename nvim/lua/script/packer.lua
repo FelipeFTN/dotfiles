@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'      -- Statusbar
   use 'folke/tokyonight.nvim'	     -- A better theme, but bugged 
   use 'tpope/vim-commentary'         -- Better commentary adding
-  use '/morhetz/gruvbox'	         -- Beautiful theme
+  use 'morhetz/gruvbox'	             -- Beautiful theme
   use 'Yggdroot/indentLine'          -- Auto indentation
   use 'psliwka/vim-smoothie'		 -- Makes scrolling smooth
   use 'mbbill/undotree'              -- Undo History
@@ -19,6 +19,8 @@ return require('packer').startup(function(use)
   use 'jiangmiao/auto-pairs'         -- Autoclosing Brackets
   use 'yuezk/vim-js'                 -- Javascript Syntax
   use 'HerringtonDarkholme/yats.vim' -- Typescript Syntax
+  use 'fatih/vim-go'				 -- Golang Syntax
+  use 'vim-ruby/vim-ruby'			 -- Ruby Syntax
   -- use 'preservim/nerdtree'        -- File manager
   -- use 'neoclide/coc.nvim'         -- Auto Complete
 end)
