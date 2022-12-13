@@ -82,17 +82,27 @@ _G.packer_plugins = {
   gruvbox = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com//morhetz/gruvbox"
+    url = "https://github.com/morhetz/gruvbox"
   },
   indentLine = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/indentLine",
     url = "https://github.com/Yggdroot/indentLine"
   },
+  ["nvim-chettahsheet"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/nvim-chettahsheet",
+    url = "https://github.com/loadfms/nvim-chettahsheet"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
@@ -119,10 +129,20 @@ _G.packer_plugins = {
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
   },
+  ["vim-go"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-go",
+    url = "https://github.com/fatih/vim-go"
+  },
   ["vim-js"] = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-js",
     url = "https://github.com/yuezk/vim-js"
+  },
+  ["vim-ruby"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-ruby",
+    url = "https://github.com/vim-ruby/vim-ruby"
   },
   ["vim-smoothie"] = {
     loaded = true,

@@ -21,6 +21,8 @@ return require('packer').startup(function(use)
   use 'HerringtonDarkholme/yats.vim' -- Typescript Syntax
   use 'fatih/vim-go'				 -- Golang Syntax
   use 'vim-ruby/vim-ruby'			 -- Ruby Syntax
+  use 'nvim-lua/plenary.nvim'		 -- Neovim refunctions
+  use 'loadfms/nvim-chettahsheet'	 -- Search Helper from Leo :)
   -- use 'preservim/nerdtree'        -- File manager
   -- use 'neoclide/coc.nvim'         -- Auto Complete
 end)
