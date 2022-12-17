@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/nvim-chettahsheet",
     url = "https://github.com/loadfms/nvim-chettahsheet"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -103,6 +108,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
