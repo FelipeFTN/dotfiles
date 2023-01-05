@@ -12,6 +12,3 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
--- Nerd Tree
--- keymap('n', "<Leader>n", ":NERDTreeFocus<CR>", ns)
--- keymap('n', "<Leader>j", ":NERDTreeToggle<CR>", ns)

@@ -10,22 +10,22 @@ return require('packer').startup(function(use)
   -- Personal plugins
   use 'vim-airline/vim-airline'      -- Statusbar
   use 'folke/tokyonight.nvim'        -- A better theme, but bugged 
+  use 'ryanoasis/vim-devicons'       -- Better icons
+  use 'jiangmiao/auto-pairs'         -- Autoclosing Brackets
   use 'tpope/vim-commentary'         -- Better commentary adding
   use 'morhetz/gruvbox'	             -- Beautiful theme
   use 'Yggdroot/indentLine'          -- Auto indentation
   use 'psliwka/vim-smoothie'		 -- Makes scrolling smooth
   use 'mbbill/undotree'              -- Undo History
-  use 'ryanoasis/vim-devicons'       -- Better icons
-  use 'jiangmiao/auto-pairs'         -- Autoclosing Brackets
   use 'yuezk/vim-js'                 -- Javascript Syntax
   use 'HerringtonDarkholme/yats.vim' -- Typescript Syntax
   use 'fatih/vim-go'				 -- Golang Syntax
   use 'vim-ruby/vim-ruby'			 -- Ruby Syntax
   use 'loadfms/nvim-chettahsheet'	 -- Search Helper from Leo :)
-  use 'nvim-lua/completion-nvim'	 -- AutoComplete for neovim
-  use 'norcalli/snippets.nvim'		 -- Code Snippet
-  use 'neovim/nvim-lspconfig'		 -- Snippet Requirement
-  use 'justmao945/vim-clang'		 -- C/C++ autocomplete
+
+  use 'norcalli/snippets.nvim'		      -- Code snippet
+  use 'justmao945/vim-clang'	     	  -- C/C++ autocomplete
+  use 'neovim/nvim-lspconfig'			  -- Language Server Protocol
 
   -- Telescope
   local telescope_build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
@@ -33,8 +33,10 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run=telescope_build }
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-lua/plenary.nvim'
+
   -- 'BurntSushi/ripgrep' - Install Manually
   -- 'sharkdp/fd'         - Install Manually
+
   -- End 
 
 end)
