@@ -11,8 +11,6 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'      -- Statusbar
   use 'folke/tokyonight.nvim'        -- A better theme, but bugged 
   use 'tpope/vim-commentary'         -- Better commentary adding
-  -- use 'preservim/nerdtree'        -- File manager
-  -- use 'neoclide/coc.nvim'         -- Auto Complete
   use 'morhetz/gruvbox'	             -- Beautiful theme
   use 'Yggdroot/indentLine'          -- Auto indentation
   use 'psliwka/vim-smoothie'		 -- Makes scrolling smooth
@@ -24,6 +22,10 @@ return require('packer').startup(function(use)
   use 'fatih/vim-go'				 -- Golang Syntax
   use 'vim-ruby/vim-ruby'			 -- Ruby Syntax
   use 'loadfms/nvim-chettahsheet'	 -- Search Helper from Leo :)
+  use 'nvim-lua/completion-nvim'	 -- AutoComplete for neovim
+  use 'norcalli/snippets.nvim'		 -- Code Snippet
+  use 'neovim/nvim-lspconfig'		 -- Snippet Requirement
+  use 'justmao945/vim-clang'		 -- C/C++ autocomplete
 
   -- Telescope
   local telescope_build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
