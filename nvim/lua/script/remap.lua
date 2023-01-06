@@ -12,3 +12,12 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+-- Formatter
+vim.keymap.set('n', '<leader>f', ':Format<CR>', {})
+vim.keymap.set('n', '<leader>F', ':FormatWrite<CR>', {})
+
+-- Undotree
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
+-- Fugitive
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
