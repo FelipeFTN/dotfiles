@@ -79,6 +79,31 @@ _G.packer_plugins = {
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
+  ["coq.artifacts"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/coq.artifacts",
+    url = "https://github.com/ms-jpq/coq.artifacts"
+  },
+  ["coq.thirdparty"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/coq.thirdparty",
+    url = "https://github.com/ms-jpq/coq.thirdparty"
+  },
+  coq_nvim = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/coq_nvim",
+    url = "https://github.com/ms-jpq/coq_nvim"
+  },
+  ["dracula.nvim"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
+  },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -94,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/nvim-chettahsheet",
     url = "https://github.com/loadfms/nvim-chettahsheet"
   },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -108,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["snippets.nvim"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/snippets.nvim",
+    url = "https://github.com/norcalli/snippets.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -134,6 +169,11 @@ _G.packer_plugins = {
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
+  ["vim-clang"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-clang",
+    url = "https://github.com/justmao945/vim-clang"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -143,6 +183,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-go"] = {
     loaded = true,
