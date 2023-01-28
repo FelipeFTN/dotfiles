@@ -34,6 +34,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Keyboard stuff
+exec "setxkbmap -layout br,us"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -108,6 +112,13 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# audio stuff
+bindsym $mod+F11 exec pactl set-sink-volume @DEFAULT_SINK@ -5%  # Up
+bindsym $mod+F12 exec pactl set-sink-volume @DEFAULT_SINK@ +5%  # Down
+bindsym $mod+F10 exec pactl set-sink-mute @DEFAULT_SINK@ toggle # Mute
+
+bindsym $mod+F9 exec ~/.config/i3/toggle_sink.sh
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -192,4 +203,5 @@ bar {
 }
 
 exec --no-startup-id picom -CGb
+exec --no-startup-id volctl
 exec_always nitrogen --restore
