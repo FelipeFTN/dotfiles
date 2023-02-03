@@ -1,9 +1,9 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+local use = require('packer').use
 
-return require('packer').startup(function(use)
+require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -24,9 +24,9 @@ return require('packer').startup(function(use)
   use 'vim-ruby/vim-ruby'			       -- Ruby Syntax
   use 'loadfms/nvim-chettahsheet'	   -- Search Helper from Leo :)
 
-  use 'ms-jpq/coq_nvim'              -- Code autocomplete
-  use 'ms-jpq/coq.artifacts'         -- Code autocomplete
-  use 'ms-jpq/coq.thirdparty'        -- Code autocomplete
+  use 'ms-jpq/coq_nvim'              -- Code autocomplete :COQnow
+  use 'ms-jpq/coq.artifacts'         -- Code autocomplete dependency
+  use 'ms-jpq/coq.thirdparty'        -- Code autocomplete dependency
 
   use 'norcalli/snippets.nvim'		   -- Code snippet
   use 'justmao945/vim-clang' 	       -- C/C++ autocomplete
