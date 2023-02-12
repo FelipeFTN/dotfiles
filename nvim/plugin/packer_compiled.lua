@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/indentLine",
     url = "https://github.com/Yggdroot/indentLine"
   },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   ["nvim-chettahsheet"] = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/nvim-chettahsheet",

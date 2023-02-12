@@ -31,6 +31,7 @@ require('packer').startup(function()
   use 'norcalli/snippets.nvim'		   -- Code snippet
   use 'justmao945/vim-clang' 	       -- C/C++ autocomplete
   use 'neovim/nvim-lspconfig'	  	   -- Language Server Protocol
+  use "williamboman/mason.nvim"      -- Package Manager
 
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- Highlighting
 
