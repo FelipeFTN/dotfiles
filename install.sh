@@ -33,6 +33,7 @@ echo "$current_dir"
 sudo ln -s $current_dir/nvim ~/.config/
 sudo ln -s $current_dir/alacritty ~/.config/
 sudo cp -a $current_dir/grub/themes/* /boot/grub/themes/
+sudo ln -s /usr/bin/nvim /usr/bin/n
 
 read -p "Press enter to install NeoVim Stuff"
 
