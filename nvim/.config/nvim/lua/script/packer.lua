@@ -32,6 +32,7 @@ require('packer').startup(function()
   use 'justmao945/vim-clang' 	       -- C/C++ autocomplete
   use 'neovim/nvim-lspconfig'	  	   -- Language Server Protocol
   use "williamboman/mason.nvim"      -- Package Manager
+  use 'mfussenegger/nvim-jdtls'      -- Eclipse LSP
 
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- Highlighting
 
