@@ -12,7 +12,7 @@ opt.softtabstop = 2
 opt.guicursor = ""
 opt.smarttab = true
 opt.number = true
-opt.wrap = true 
+opt.wrap = false
 
 opt.hlsearch = false
 opt.incsearch = true

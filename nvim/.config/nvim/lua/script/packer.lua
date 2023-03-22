@@ -16,22 +16,23 @@ require('packer').startup(function()
   use 'morhetz/gruvbox'	             -- Beautiful theme
   use 'Mofiqul/dracula.nvim'         -- Beautiful theme
   use 'Yggdroot/indentLine'          -- Auto indentation
-  use 'psliwka/vim-smoothie'		     -- Makes scrolling smooth
+  use 'psliwka/vim-smoothie'	     -- Makes scrolling smooth
   use 'mbbill/undotree'              -- Undo History
   use 'yuezk/vim-js'                 -- Javascript Syntax
   use 'HerringtonDarkholme/yats.vim' -- Typescript Syntax
-  use 'fatih/vim-go'				         -- Golang Syntax
-  use 'vim-ruby/vim-ruby'			       -- Ruby Syntax
-  use 'loadfms/nvim-chettahsheet'	   -- Search Helper from Leo :)
+  use 'fatih/vim-go'		     -- Golang Syntax
+  use 'vim-ruby/vim-ruby'	     -- Ruby Syntax
+  use 'loadfms/nvim-chettahsheet'    -- Search Helper from Leo :)
 
   use 'ms-jpq/coq_nvim'              -- Code autocomplete :COQnow
   use 'ms-jpq/coq.artifacts'         -- Code autocomplete dependency
   use 'ms-jpq/coq.thirdparty'        -- Code autocomplete dependency
 
-  use 'norcalli/snippets.nvim'		   -- Code snippet
-  use 'justmao945/vim-clang' 	       -- C/C++ autocomplete
-  use 'neovim/nvim-lspconfig'	  	   -- Language Server Protocol
+  use 'norcalli/snippets.nvim'	     -- Code snippet
+  use 'justmao945/vim-clang' 	     -- C/C++ autocomplete
+  use 'neovim/nvim-lspconfig'	     -- Language Server Protocol
   use "williamboman/mason.nvim"      -- Package Manager
+  use 'mfussenegger/nvim-jdtls'      -- Eclipse LSP
 
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- Highlighting
 
@@ -49,5 +50,4 @@ require('packer').startup(function()
   -- 'sharkdp/fd'         - Install Manually
 
   -- End 
-
 end)
