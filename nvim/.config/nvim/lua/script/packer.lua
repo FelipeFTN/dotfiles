@@ -46,8 +46,9 @@ require('packer').startup(function()
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = telescope_build }
   use 'nvim-lua/plenary.nvim'
 
-  -- 'BurntSushi/ripgrep' - Install Manually
-  -- 'sharkdp/fd'         - Install Manually
+  -- 'BurntSushi/ripgrep'       - Install Manually
+  -- 'sharkdp/fd'               - Install Manually
+  -- 'rust-analyzer/lsp-server' - Install Maually
 
   -- End 
 end)
