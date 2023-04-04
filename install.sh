@@ -17,7 +17,7 @@ function setup_neovim() {
 
 function setup_packages() {
   # Arch based systems
-  sudo pacman -Syy --noconfirm fd ripgrep python python-virtualenv
+  sudo pacman -Syy --noconfirm fd ripgrep python python-virtualenv pyright
 }
 
 setup_packages
