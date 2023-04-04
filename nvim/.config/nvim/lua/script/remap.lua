@@ -2,8 +2,8 @@ local ns = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Netrw
-keymap('n', "<Leader>m", ":Explore<CR>", ns)
-keymap('n', "<Leader>n", ":Vexplore<CR>", ns)
+keymap('n', "<leader>m", ":Explore<CR>", ns)
+keymap('n', "<leader>n", ":Vexplore<CR>", ns)
 
 -- Telescope
 local builtin = require('telescope.builtin')

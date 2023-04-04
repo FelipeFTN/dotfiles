@@ -13,10 +13,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
--- Only required if you have packer configured as `opt`
-local use = require('packer').use
-
-require('packer').startup(function()
+return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -63,6 +60,7 @@ require('packer').startup(function()
   -- 'sharkdp/fd'               - Install Manually
   -- 'rust-analyzer/lsp-server' - Install Maually
 
+  -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then
     require('packer').sync()
   end

@@ -3,24 +3,20 @@ local lspconfig = require('lspconfig')
 local opt = vim.opt
 local g = vim.g
 
-opt.expandtab = true
-opt.smartindent = true
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
-
-opt.guicursor = ""
-opt.smarttab = true
-opt.number = true
-opt.wrap = false
-
-opt.hlsearch = false
-opt.incsearch = true
-
-opt.updatetime = 50
-
 g.mapleader = " "
 
+opt.smartindent = true
+opt.expandtab = true
+opt.hlsearch = false
+opt.incsearch = true
+opt.softtabstop = 2
+opt.updatetime = 50
+opt.smarttab = true
+opt.guicursor = ""
+opt.shiftwidth = 2
+opt.number = true
+opt.wrap = false
+opt.tabstop = 2
 
 -- Automatically start coq
 g.coq_settings = { auto_start = true }
