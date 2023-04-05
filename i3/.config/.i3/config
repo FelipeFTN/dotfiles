@@ -56,7 +56,7 @@ bindsym $mod+Ctrl+m exec alacritty -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec alacritty -e 'bmenu'
-bindsym $mod+F2 exec palemoon
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
@@ -334,9 +334,9 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #222D31
-        statusline #F9FAF9
-        separator  #454947
+        background #121b3c
+        statusline #121b3c
+        separator  #121b3c
 
 #                      border  backgr. text
         focused_workspace  #F9FAF9 #16a085 #292F34
@@ -358,8 +358,8 @@ bindsym $mod+m bar mode toggle
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
-  client.background       #2B2C2B
-
+  client.background       #121b3c
+  # client.background $term_background
 #############################
 ### settings for i3-gaps: ###
 #############################
