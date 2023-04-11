@@ -17,7 +17,8 @@ function setup_neovim() {
 
 function setup_packages() {
   # Arch based systems
-  sudo pacman -Syy --noconfirm fd ripgrep python python-virtualenv pyright
+  sudo pacman -Syy --noconfirm --needed neovim tmux fd ripgrep python python-virtualenv pyright nodejs npm
+  sudo ln -s $(which nvim) /usr/bin/n
 }
 
 setup_packages
