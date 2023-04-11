@@ -21,3 +21,6 @@ alias mysecret="ruby ~/Desktop/MySecret/main.rb"
 
 # MySecurity
 alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
+
+export EDITOR="/usr/bin/nvim"
+export VISUAL="/usr/bin/nvim"
