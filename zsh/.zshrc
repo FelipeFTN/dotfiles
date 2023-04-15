@@ -17,10 +17,18 @@ fi
 if [ "$TMUX" = "" ]; then tmux; fi
 
 # MySecret
-alias mysecret="ruby ~/Desktop/MySecret/main.rb"
+# alias mysecret="ruby ~/Desktop/MySecret/main.rb"
 
 # MySecurity
 alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
 
+# Dotfiles
+alias dotfiles="nvim ~/dotfiles"
+
+# Text Editor
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
+
+# Ruby Gem
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
