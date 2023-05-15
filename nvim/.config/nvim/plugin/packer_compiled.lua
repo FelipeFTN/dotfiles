@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/formatter.nvim",
     url = "https://github.com/mhartington/formatter.nvim"
   },
+  ["git-blame.nvim"] = {
+    loaded = true,
+    path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
+    url = "https://github.com/f-person/git-blame.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/gruvbox",
