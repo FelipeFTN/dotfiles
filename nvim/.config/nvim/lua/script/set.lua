@@ -1,4 +1,6 @@
 local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+local mason = require("mason").setup()
+local mason_lsp = require("mason-lspconfig").setup()
 local lspconfig = require('lspconfig')
 local opt = vim.opt
 local g = vim.g
