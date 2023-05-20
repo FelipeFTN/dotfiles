@@ -6,18 +6,21 @@ keymap('n', "<leader>m", ":Explore<CR>", ns)
 keymap('n', "<leader>n", ":Vexplore<CR>", ns)
 
 -- Telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+keymap('n', '<leader>ff', ":lua require('telescope.builtin').find_files()<CR>", ns)
+keymap('n', '<leader>fg', ":lua require('telescope.builtin').live_grep()<CR>", ns)
+keymap('n', '<leader>fb', ":lua require('telescope.builtin').buffers()<CR>", ns)
+keymap('n', '<leader>fh', ":lua require('telescope.builtin').help_tags()<CR>", ns)
 
 -- Formatter
-vim.keymap.set('n', '<leader>f', ':Format<CR>', {})
-vim.keymap.set('n', '<leader>F', ':FormatWrite<CR>', {})
+keymap('n', '<leader>f', ':Format<CR>', ns)
+keymap('n', '<leader>F', ':FormatWrite<CR>', ns)
 
 -- Undotree
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+keymap('n', '<leader>u', ":UndotreeToggle<CR>", ns)
 
 -- Fugitive
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+keymap('n', '<leader>gs', ":Git<CR>", ns)
+
+-- Quick fix
+keymap('n', '<leader>qf', ":lua require('script.quickfix').apply_quickfix()<CR>", ns)
+
