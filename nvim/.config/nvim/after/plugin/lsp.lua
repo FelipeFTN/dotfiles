@@ -51,8 +51,7 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 } 
--- require("mason").setup()
--- require("mason-lspconfig").setup()
+
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
@@ -64,7 +63,6 @@ require('lspconfig')['tsserver'].setup{
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
-    -- Server-specific settings...
     settings = {
       ["rust-analyzer"] = {}
     }
@@ -73,7 +71,7 @@ require('lspconfig')['clangd'].setup{
 	on_attach = on_attach,
 	flags = lsp_flags,
 }
-require('lspconfig')['eslint'].setup{
+require('lspconfig')['eslint'].setup{ -- vscode-eslint-language-server
 	on_attach = on_attach,
 	flags = lsp_flags,
 }
@@ -81,19 +79,11 @@ require('lspconfig')['pylsp'].setup{
 	on_attach = on_attach,
 	flags = lsp_flags,
 }
--- require('lspconfig')['solargraph'].setup{
--- 	on_attach = on_attach,
--- 	flags = lsp_flags,
--- }
 require('lspconfig')['gopls'].setup{
 	on_attach = on_attach,
 	flags = lsp_flags,
 }
 require('lspconfig')['phpactor'].setup{
-	on_attach = on_attach,
-	flags = lsp_flags,
-}
-require('lspconfig')['clangd'].setup{
 	on_attach = on_attach,
 	flags = lsp_flags,
 }
