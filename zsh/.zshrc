@@ -23,7 +23,7 @@ if [ "$TMUX" = "" ]; then tmux; fi
 alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
 
 # Dotfiles
-alias dotfiles="nvim ~/dotfiles"
+alias dotfiles="cd ~/dotfiles/ && nvim ~/dotfiles"
 
 # Text Editor
 export EDITOR="/usr/bin/nvim"
