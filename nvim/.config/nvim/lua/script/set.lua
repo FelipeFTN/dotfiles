@@ -15,10 +15,10 @@ opt.softtabstop = 2
 opt.updatetime = 50
 opt.smarttab = true
 opt.guicursor = ""
-opt.shiftwidth = 2
+opt.shiftwidth = 4
 opt.number = true
 opt.wrap = false
-opt.tabstop = 2
+opt.tabstop = 4
 
 -- Automatically start coq
 g.coq_settings = { auto_start = true }

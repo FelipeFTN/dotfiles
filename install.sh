@@ -1,28 +1,39 @@
 #!/bin/bash
+set -euo pipefail
 
 function setup_stow() {
-  sudo pacman -Syy --noconfirm stow
+  echo "Setting up stow"
   mv ~/.zshrc ~/.zshrc_old
   stow */
 }
 
-function setup_neovim() {
-  # Install Packer - package manager
-  git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-  # Setup
-  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-  nvim --headless -c 'COQdeps'
+function install_apps() {
+  echo "Installing apps from packages..."
+  while read -r app; do
+    sudo pacman -Syy --noconfirm --needed "$app"
+  done < ./packages
 }
 
-function setup_packages() {
-  # Arch based systems
-  sudo pacman -Syy --noconfirm --needed neovim tmux fd ripgrep python python-virtualenv pyright nodejs npm alacritty go gopls ruby
-  sudo ln -s $(which nvim) /usr/bin/n
+function pulseaudio_config() {
+  echo "Appending pulseaudio config to /etc/pulse/default.pa"
+  sudo cat ./pulseaudio >> /etc/pulse/default.pa
+  sudo pulseaudio -k
 }
 
-setup_packages
+function gnome_extensions() {
+  echo "Checking if gnome extensions.tar.gz exists"
+  if [ -f gnome-extensions.tar.gz ]; then
+    echo "Extracting GNOME extensions from gnome-extensions.tar.gz"
+    tar xzvf gnome-extensions.tar.gz -C ~/.local/share/gnome-shell/extensions/
+  else
+    echo "gnome-extensions.tar.gz not found. Make sure the file is in the same directory as this script."
+  fi
+}
+
+# Main script
+install_apps
 setup_stow
-setup_neovim
+pulseaudio_config
+gnome_extensions
 
-echo "All done! You're ready to rock!"
+echo "done!"
