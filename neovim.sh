@@ -4,7 +4,7 @@ function setup_neovim() {
    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
   echo "Setting up vim plugins (don't panic if it looks stuck)"
-  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' &
 
   echo "Setting neovim syslink"
   sudo ln -s $(which nvim) /usr/bin/n
