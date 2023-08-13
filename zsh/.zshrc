@@ -26,8 +26,8 @@ alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
 alias dotfiles="cd ~/dotfiles/ && nvim ~/dotfiles"
 
 # Text Editor
-export EDITOR="/usr/bin/nvim"
-export VISUAL="/usr/bin/nvim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Ruby Gem
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
