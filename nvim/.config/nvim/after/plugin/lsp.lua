@@ -59,10 +59,6 @@ require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
-require('lspconfig')['clangd'].setup{
-	on_attach = on_attach,
-	flags = lsp_flags,
-}
 require('lspconfig')['eslint'].setup{ -- vscode-eslint-language-server
 	on_attach = on_attach,
 	flags = lsp_flags,
