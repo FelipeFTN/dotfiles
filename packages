@@ -9,6 +9,7 @@ pyright
 nodejs
 npm
 alacritty
+neofetch
 go
 gopls
 ruby
@@ -18,3 +19,4 @@ patch
 rust-analyzer
 docker
 docker-buildx
+pavucontrol

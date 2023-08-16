@@ -35,3 +35,5 @@ export PATH="$PATH:$GEM_HOME/bin"
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/env"
+
+neofetch
