@@ -19,6 +19,8 @@ opt.shiftwidth = 4
 opt.number = true
 opt.wrap = false
 opt.tabstop = 4
+vim.o.termguicolors = true
+
 
 -- Automatically start coq
 g.coq_settings = { auto_start = true }

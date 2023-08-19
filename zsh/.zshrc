@@ -36,4 +36,5 @@ export PATH="$PATH:$GEM_HOME/bin"
 # Rust
 export PATH="$PATH:$HOME/.cargo/env"
 
-neofetch
+# XTerm-256color
+export TERM="xterm-256color"

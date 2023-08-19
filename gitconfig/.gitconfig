@@ -11,3 +11,10 @@
 	prompt = false
 [alias]
 	d = difftool
+[color]
+    ui = true
+    diff = auto
+    pager = true
+    status = auto
+    branch = auto
+    interactive = auto
