@@ -45,7 +45,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'                                     -- Git integration
   use 'williamboman/mason-lspconfig.nvim'                      -- Mason configuration LSP
   use { "williamboman/mason.nvim", run = ":MasonUpdate" }      -- Mason Package Manager
-  use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- Highlighting
+  use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) -- Highlighting -> Don't forget to run 'TSInstall diff git_rebase' in order to gitcommit works well
   use 'jose-elias-alvarez/null-ls.nvim'                        -- LSP Injection Lint
   use 'mfussenegger/nvim-dap'                                  -- Debugger
   use 'mfussenegger/nvim-lint'                                 -- Lint

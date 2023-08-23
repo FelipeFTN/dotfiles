@@ -21,9 +21,8 @@ opt.wrap = false
 opt.tabstop = 4
 vim.o.termguicolors = true
 
-
 -- Automatically start coq
-g.coq_settings = { auto_start = true }
+g.coq_settings = { auto_start = false } -- COQ on C & C++ is terrible.
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 for _, lsp in ipairs(servers) do
