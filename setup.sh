@@ -8,6 +8,8 @@ function setup_stow() {
 }
 
 function install_apps() {
+  echo "Updating System Packages"
+  sudo pacman -Syu --noconfirm
   echo "Installing apps from packages..."
   while read -r app; do
     sudo pacman -Syy --noconfirm --needed "$app"

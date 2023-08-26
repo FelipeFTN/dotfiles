@@ -13,3 +13,5 @@ Pretty simple...
  - `setup.sh` --> It will install everything I need.
  - `neovim.sh` --> Setup my neovim environment.
  - `ssh-key.sh` --> Generates a new SSH key (for GitHub).
+
+ OBS: Do not forget to set a ssh key before running `neovim.sh`
