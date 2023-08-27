@@ -7,6 +7,11 @@ var scrollWheelOptions = {
     'workspaces-bar': 'Over workspaces bar',
     disabled: 'Disabled',
 };
+var scrollWheelDirectionOptions = {
+    normal: 'Normal',
+    inverted: 'Inverted',
+    disabled: 'Disabled',
+};
 var positionOptions = {
     left: 'Left',
     center: 'Center',
@@ -87,6 +92,22 @@ var BehaviorPage = class BehaviorPage {
                     key: 'scroll-wheel-debounce',
                     predicate: (value) => value.get_boolean(),
                     page,
+                });
+                addCombo({
+                    window: this.window,
+                    settings: this._settings,
+                    group,
+                    key: 'scroll-wheel-vertical',
+                    title: 'Vertical scrolling',
+                    options: scrollWheelDirectionOptions,
+                });
+                addCombo({
+                    window: this.window,
+                    settings: this._settings,
+                    group,
+                    key: 'scroll-wheel-horizontal',
+                    title: 'Horizontal scrolling',
+                    options: scrollWheelDirectionOptions,
                 });
                 addToggle({
                     settings: this._settings,

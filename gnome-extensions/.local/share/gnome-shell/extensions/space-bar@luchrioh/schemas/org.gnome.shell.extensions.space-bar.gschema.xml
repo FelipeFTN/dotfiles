@@ -43,6 +43,22 @@
         <key name="scroll-wheel-debounce-time" type="i">
             <default>200</default>
         </key>
+        <key name="scroll-wheel-vertical" type="s">
+            <choices>
+                <choice value="normal"/>
+                <choice value="inverted"/>
+                <choice value="disabled"/>
+            </choices>
+            <default>"normal"</default>
+        </key>
+        <key name="scroll-wheel-horizontal" type="s">
+            <choices>
+                <choice value="normal"/>
+                <choice value="inverted"/>
+                <choice value="disabled"/>
+            </choices>
+            <default>"disabled"</default>
+        </key>
         <key name="scroll-wheel-wrap-around" type="b">
             <default>false</default>
         </key>
@@ -68,6 +84,15 @@
         </key>
         <key name="active-workspace-border-color" type="s">
             <default>'rgba(0,0,0,0)'</default>
+        </key>
+        <key name="active-workspace-font-size" type="i">
+            <default>-1</default>
+        </key>
+        <key name="active-workspace-font-size-user" type="i">
+            <default>11</default>
+        </key>
+        <key name="active-workspace-font-size-active" type="b">
+            <default>false</default>
         </key>
         <key name="active-workspace-font-weight" type="s">
             <choices>
@@ -107,6 +132,12 @@
             <default>'rgba(0,0,0,0)'</default>
         </key>
         <key name="inactive-workspace-text-color-active" type="b">
+            <default>false</default>
+        </key>
+        <key name="inactive-workspace-font-size" type="i">
+            <default>-1</default>
+        </key>
+        <key name="inactive-workspace-font-size-active" type="b">
             <default>false</default>
         </key>
         <key name="inactive-workspace-font-weight" type="s">
@@ -161,6 +192,12 @@
         <key name="empty-workspace-border-color" type="s">
             <default>'rgba(0,0,0,0)'</default>
         </key>
+        <key name="empty-workspace-font-size" type="i">
+            <default>-1</default>
+        </key>
+        <key name="empty-workspace-font-size-active" type="b">
+            <default>false</default>
+        </key>
         <key name="empty-workspace-font-weight" type="s">
             <choices>
                 <choice value="100" />
@@ -213,6 +250,12 @@
             <default>false</default>
         </key>
 
+        <key name="move-workspace-left" type="as">
+            <default><![CDATA[['<Control><Alt><Super>Left']]]></default>
+        </key>
+        <key name="move-workspace-right" type="as">
+            <default><![CDATA[['<Control><Alt><Super>Right']]]></default>
+        </key>
         <key name="activate-previous-key" type="as">
             <default><![CDATA[['<Super>grave']]]></default>
             <!-- <default><![CDATA[['<Super>Above_Tab']]]></default> -->

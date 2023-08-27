@@ -70,17 +70,35 @@ var ScrollHandler = class ScrollHandler {
                 return Clutter.EVENT_PROPAGATE;
             }
         }
-        const currentIndex = global.workspace_manager.get_active_workspace_index();
-        let newIndex;
+        let direction;
+        let directionSetting = null;
         switch (event.get_scroll_direction()) {
             case Clutter.ScrollDirection.UP:
-                newIndex = this._findVisibleWorkspace(currentIndex, -1);
+                direction = -1;
+                directionSetting = this._settings.scrollWheelVertical.value;
                 break;
             case Clutter.ScrollDirection.DOWN:
-                newIndex = this._findVisibleWorkspace(currentIndex, 1);
+                direction = 1;
+                directionSetting = this._settings.scrollWheelVertical.value;
                 break;
-            default:
-                return Clutter.EVENT_PROPAGATE;
+            case Clutter.ScrollDirection.LEFT:
+                direction = -1;
+                directionSetting = this._settings.scrollWheelHorizontal.value;
+                break;
+            case Clutter.ScrollDirection.RIGHT:
+                direction = 1;
+                directionSetting = this._settings.scrollWheelHorizontal.value;
+                break;
+        }
+        let newIndex;
+        if (directionSetting && directionSetting !== 'disabled') {
+            const invertFactor = directionSetting === 'inverted' ? -1 : 1;
+            newIndex = this._ws.findVisibleWorkspace((direction * invertFactor), {
+                wraparound: this._settings.scrollWheelWrapAround.value,
+            });
+        }
+        else {
+            return Clutter.EVENT_PROPAGATE;
         }
         if (newIndex !== null && this._debounceTimeExceeded()) {
             const workspace = global.workspace_manager.get_workspace_by_index(newIndex);
@@ -90,29 +108,5 @@ var ScrollHandler = class ScrollHandler {
             }
         }
         return Clutter.EVENT_STOP;
-    }
-    _findVisibleWorkspace(index, step) {
-        const startingIndex = index;
-        while (true) {
-            index += step;
-            if (index < 0 || index >= this._ws.numberOfEnabledWorkspaces) {
-                if (this._settings.scrollWheelWrapAround.value) {
-                    // Prevent infinite loop when there is no other workspace to go to.
-                    if (index === startingIndex) {
-                        return null;
-                    }
-                    index =
-                        (index + this._ws.numberOfEnabledWorkspaces) %
-                            this._ws.numberOfEnabledWorkspaces;
-                }
-                else {
-                    break;
-                }
-            }
-            if (this._ws.workspaces[index].isVisible) {
-                return index;
-            }
-        }
-        return null;
     }
 }

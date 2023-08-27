@@ -36,6 +36,20 @@ var ShortcutsPage = class ShortcutsPage {
             settings: this._settings,
             window: this.window,
             group,
+            key: 'move-workspace-left',
+            title: 'Move current workspace left',
+        });
+        addKeyboardShortcut({
+            settings: this._settings,
+            window: this.window,
+            group,
+            key: 'move-workspace-right',
+            title: 'Move current workspace right',
+        });
+        addKeyboardShortcut({
+            settings: this._settings,
+            window: this.window,
+            group,
             key: 'activate-previous-key',
             title: 'Switch to previous workspace',
         });

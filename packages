@@ -21,3 +21,4 @@ docker
 docker-buildx
 pavucontrol
 yay
+make
