@@ -18,6 +18,8 @@ rust
 patch
 rust-analyzer
 docker
+docker-compose
+containerd
 docker-buildx
 pavucontrol
 yay
