@@ -1,4 +1,4 @@
-//this file is part of https://github.com/maoschanz/emoji-selector-for-gnome
+//this file is part of https://github.com/felipeftn/emoji-copy
 
 const St = imports.gi.St;
 
@@ -8,7 +8,7 @@ const Me = ExtensionUtils.getCurrentExtension();
 const Extension = Me.imports.extension;
 
 /* Stuffs for translations etc. */
-const Gettext = imports.gettext.domain('emoji-selector');
+const Gettext = imports.gettext.domain('emoji-copy');
 const _ = Gettext.gettext;
 
 ////////////////////////////////////////////////////////////////////////////////

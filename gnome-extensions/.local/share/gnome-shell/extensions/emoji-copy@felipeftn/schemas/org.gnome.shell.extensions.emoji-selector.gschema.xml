@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="emoji-selector">
-	<schema id="org.gnome.shell.extensions.emoji-selector"
-	path="/org/gnome/shell/extensions/emoji-selector/">
+<schemalist gettext-domain="emoji-copy">
+	<schema id="org.gnome.shell.extensions.emoji-copy"
+	path="/org/gnome/shell/extensions/emoji-copy/">
     <key type="s" name="position">
       <default>'top'</default>
       <summary>orientation of the interface</summary>

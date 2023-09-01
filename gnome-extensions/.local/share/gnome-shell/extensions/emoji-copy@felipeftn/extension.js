@@ -1,4 +1,4 @@
-// extension.js (https://github.com/maoschanz/emoji-selector-for-gnome)
+// extension.js (https://github.com/felipeftn/emoji-copy)
 
 /*
 	Copyright 2017-2022 Romain F. T.
@@ -29,7 +29,7 @@ const Clipboard = St.Clipboard.get_default();
 const CLIPBOARD_TYPE = St.ClipboardType.CLIPBOARD;
 
 /* Stuffs for settings, translations etc. */
-const Gettext = imports.gettext.domain('emoji-selector');
+const Gettext = imports.gettext.domain('emoji-copy');
 const _ = Gettext.gettext;
 
 const ExtensionUtils = imports.misc.extensionUtils;
@@ -41,16 +41,15 @@ const EmojiSearchItem = Me.imports.emojiSearchItem.EmojiSearchItem;
 
 //------------------------------------------------------------------------------
 
-var SETTINGS;
+// These global variables are used to store some static settings
+var SETTINGS = null;
+var GLOBAL_BUTTON = null;
 let SIGNAUX = [];
+let POSITION;
+var NB_COLS;
+
 let timeoutSourceId = null;
 
-// Global variable : GLOBAL_BUTTON to click in the topbar
-var GLOBAL_BUTTON;
-
-// These global variables are used to store some static settings
-var NB_COLS;
-let POSITION;
 
 //------------------------------------------------------------------------------
 
@@ -277,7 +276,7 @@ class EmojisMenu {
 //------------------------------------------------------------------------------
 
 function init() {
-	ExtensionUtils.initTranslations('emoji-selector');
+	ExtensionUtils.initTranslations('emoji-copy');
 	try {
 		let theme = imports.gi.Gtk.IconTheme.get_default();
 		theme.append_search_path(Me.path + '/icons');
@@ -341,6 +340,10 @@ function disable() {
 		GLib.Source.remove(timeoutSourceId);
 		timeoutSourceId = null;
 	}
+
+    SETTINGS = null;
+    GLOBAL_BUTTON = null;
+    SIGNAUX = [];
 }
 
 //------------------------------------------------------------------------------

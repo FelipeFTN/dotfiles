@@ -1,4 +1,4 @@
-//this file is part of https://github.com/maoschanz/emoji-selector-for-gnome
+//this file is part of https://github.com/felipeftn/emoji-copy
 
 const St = imports.gi.St;
 const Clutter = imports.gi.Clutter;

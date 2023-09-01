@@ -1,4 +1,4 @@
-// this file is part of https://github.com/maoschanz/emoji-selector-for-gnome
+// this file is part of https://github.com/felipeftn/emoji-copy
 
 const St = imports.gi.St;
 
@@ -11,7 +11,7 @@ const Extension = Me.imports.extension;
 const EmojiButton = Me.imports.emojiButton.EmojiButton;
 
 /* Translations */
-const Gettext = imports.gettext.domain('emoji-selector');
+const Gettext = imports.gettext.domain('emoji-copy');
 const _ = Gettext.gettext;
 
 //------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ var EmojiSearchItem = class EmojiSearchItem {
 			if (availableSlots > 0) {
 				let emojiCategory = Extension.GLOBAL_BUTTON.emojiCategories[cat];
 				let catResults = emojiCategory.searchEmoji(
-					searchedText, availableSlots, priority
+					searchedText, results, this._recents, availableSlots, priority
 				);
 				results = results.concat(catResults);
 			}
