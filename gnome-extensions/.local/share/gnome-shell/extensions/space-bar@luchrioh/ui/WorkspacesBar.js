@@ -26,13 +26,15 @@ var WorkspacesBar = class WorkspacesBar {
     init() {
         this._initButton();
         this._initMenu();
+        this._ws.onUpdate(() => this._updateWorkspaces());
         this._styles.onWorkspacesBarChanged(() => this._refreshTopBarConfiguration());
         this._styles.onWorkspaceLabelsChanged(() => this._updateWorkspaces());
+        this._settings.alwaysShowNumbers.subscribe(() => this._updateWorkspaces());
+        this._settings.indicatorStyle.subscribe(() => this._refreshTopBarConfiguration());
         this._settings.position.subscribe(() => this._refreshTopBarConfiguration());
         this._settings.positionIndex.subscribe(() => this._refreshTopBarConfiguration());
     }
     destroy() {
-        this._wsBar.destroy();
         this._button.destroy();
         this._menu.destroy();
         this._dragHandler.destroy();
@@ -50,23 +52,67 @@ var WorkspacesBar = class WorkspacesBar {
     _initButton() {
         this._button = new WorkspacesButton(0.5, this._name);
         this._buttonSubject.next(this._button);
-        this._button._delegate = this._dragHandler;
-        this._button.track_hover = false;
         this._button.style_class = 'panel-button space-bar';
-        this._button.set_style(this._styles.getWorkspacesBarStyle());
-        this._ws.onUpdate(() => this._updateWorkspaces());
-        // bar creation
-        this._wsBar = new St.BoxLayout({});
-        this._updateWorkspaces();
-        this._button.add_child(this._wsBar);
+        switch (this._settings.indicatorStyle.value) {
+            case 'current-workspace-name':
+                this._initWorkspaceLabel();
+                break;
+            case 'workspaces-bar':
+                this._initWorkspacesBar();
+                break;
+        }
         Main.panel.addToStatusArea(this._name, this._button, this._settings.positionIndex.value, this._settings.position.value);
+        this._updateWorkspaces();
     }
     _initMenu() {
         this._menu = new WorkspacesBarMenu(this._button.menu);
         this._menu.init();
     }
-    // update the workspaces bar
+    _initWorkspaceLabel() {
+        this._button.style_class += ' workspace-label';
+        this._wsLabel = new St.Label({
+            y_align: Clutter.ActorAlign.CENTER,
+        });
+        this._button.add_child(this._wsLabel);
+        this._button.connect('button-press-event', (actor, event) => {
+            switch (event.get_button()) {
+                case 1:
+                    if (this._settings.toggleOverview.value) {
+                        Main.overview.toggle();
+                    }
+                    else {
+                        this._button.menu.toggle();
+                    }
+                    return Clutter.EVENT_STOP;
+                case 3:
+                    this._button.menu.toggle();
+                    return Clutter.EVENT_STOP;
+            }
+            return Clutter.EVENT_PROPAGATE;
+        });
+    }
+    _initWorkspacesBar() {
+        this._button._delegate = this._dragHandler;
+        this._button.track_hover = false;
+        this._button.set_style(this._styles.getWorkspacesBarStyle());
+        this._wsBar = new St.BoxLayout({});
+        this._button.add_child(this._wsBar);
+    }
     _updateWorkspaces() {
+        switch (this._settings.indicatorStyle.value) {
+            case 'current-workspace-name':
+                this._updateWorkspaceLabel();
+                break;
+            case 'workspaces-bar':
+                this._updateWorkspacesBar();
+                break;
+        }
+    }
+    _updateWorkspaceLabel() {
+        const workspace = this._ws.workspaces[this._ws.currentIndex];
+        this._wsLabel.set_text(this._ws.getDisplayName(workspace));
+    }
+    _updateWorkspacesBar() {
         // destroy old workspaces bar buttons
         this._wsBar.destroy_all_children();
         this._dragHandler.wsBoxes = [];

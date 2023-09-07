@@ -91,8 +91,8 @@ var Workspaces = class Workspaces {
         this._timeout.destroy();
         this._windowAddedListeners.forEach((entry) => entry.workspace.disconnect(entry.listener));
     }
-    onUpdate(callback) {
-        this._updateNotifier.subscribe(callback);
+    onUpdate(callback, until) {
+        this._updateNotifier.subscribe(callback, until);
     }
     activate(index, { focusWindowIfCurrentWorkspace = false } = {}) {
         const isCurrentWorkspace = global.workspace_manager.get_active_workspace_index() === index;
@@ -158,16 +158,26 @@ var Workspaces = class Workspaces {
         }
     }
     moveCurrentWorkspace(direction) {
-        const newIndex = this.findVisibleWorkspace(direction);
-        if (newIndex !== null) {
+        const newIndex = this.currentIndex + direction;
+        if (newIndex >= 0 && newIndex < this.numberOfEnabledWorkspaces) {
             this.reorderWorkspace(this.currentIndex, newIndex);
         }
     }
     getDisplayName(workspace) {
-        if (this._isExtraDynamicWorkspace(workspace)) {
+        if (this.isExtraDynamicWorkspace(workspace)) {
             return '+';
         }
-        return workspace.name || (workspace.index + 1).toString();
+        if (workspace.name) {
+            if (this._settings.alwaysShowNumbers.value) {
+                return `${workspace.index + 1}: ${workspace.name}`;
+            }
+            else {
+                return workspace.name;
+            }
+        }
+        else {
+            return (workspace.index + 1).toString();
+        }
     }
     focusMostRecentWindowOnWorkspace(workspace) {
         const mostRecentWindowOnWorkspace = AltTab.getWindows(workspace).find((window) => !window.is_on_all_workspaces());
@@ -211,7 +221,7 @@ var Workspaces = class Workspaces {
      * When using dynamic workspaces, whether `workspace` is the extra last workspace, that is
      * currently neither used nor focused.
      */
-    _isExtraDynamicWorkspace(workspace) {
+    isExtraDynamicWorkspace(workspace) {
         return (this._settings.dynamicWorkspaces.value &&
             workspace.index > 0 &&
             workspace.index === this.numberOfEnabledWorkspaces - 1 &&
@@ -330,7 +340,7 @@ var Workspaces = class Workspaces {
                 if (workspace.hasWindows && !workspace.name) {
                     this._wsNames.restoreSmartWorkspaceName(workspace.index);
                 }
-                if (this._isExtraDynamicWorkspace(workspace)) {
+                if (this.isExtraDynamicWorkspace(workspace)) {
                     this._wsNames.remove(workspace.index);
                 }
             }
@@ -338,7 +348,7 @@ var Workspaces = class Workspaces {
     }
     _clearEmptyWorkspaceNames() {
         for (const workspace of this.workspaces) {
-            if ((!workspace.isEnabled || this._isExtraDynamicWorkspace(workspace)) &&
+            if ((!workspace.isEnabled || this.isExtraDynamicWorkspace(workspace)) &&
                 typeof workspace.name === 'string') {
                 // Completely remove disabled workspaces from the names array.
                 this._wsNames.remove(workspace.index);

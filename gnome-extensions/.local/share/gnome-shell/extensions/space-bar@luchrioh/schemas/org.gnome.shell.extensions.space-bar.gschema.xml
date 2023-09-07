@@ -7,6 +7,14 @@
     </schema>
 
     <schema id="org.gnome.shell.extensions.space-bar.behavior" path="/org/gnome/shell/extensions/space-bar/behavior/">
+        <key name="indicator-style" type="s">
+            <choices>
+                <choice value="current-workspace-name"/>
+                <choice value="workspaces-bar"/>
+            </choices>
+            <default>"workspaces-bar"</default>
+            <summary>Indicator style</summary>
+        </key>
         <key name="position" type="s">
             <choices>
                 <choice value="left"/>
@@ -21,6 +29,9 @@
             <default>1</default>
             <summary>Position index</summary>
             <description>Order relative to other elements</description>
+        </key>
+        <key name="always-show-numbers" type="b">
+            <default>false</default>
         </key>
         <key name="show-empty-workspaces" type="b">
             <default>true</default>

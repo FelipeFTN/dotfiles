@@ -2,9 +2,13 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const { Adw } = imports.gi;
 const { addCombo, addSpinButton, addToggle } = Me.imports.preferences.common;
+var indicatorStyleOptions = {
+    'current-workspace-name': 'Current workspace name',
+    'workspaces-bar': 'Workspaces bar',
+};
 var scrollWheelOptions = {
     panel: 'Over top panel',
-    'workspaces-bar': 'Over workspaces bar',
+    'workspaces-bar': 'Over indicator',
     disabled: 'Disabled',
 };
 var scrollWheelDirectionOptions = {
@@ -32,6 +36,14 @@ var BehaviorPage = class BehaviorPage {
     _initGeneralGroup() {
         const group = new Adw.PreferencesGroup();
         group.set_title('General');
+        addCombo({
+            window: this.window,
+            settings: this._settings,
+            group,
+            key: 'indicator-style',
+            title: 'Indicator style',
+            options: indicatorStyleOptions,
+        });
         addCombo({
             window: this.window,
             settings: this._settings,
@@ -120,8 +132,15 @@ var BehaviorPage = class BehaviorPage {
         addToggle({
             settings: this._settings,
             group,
+            key: 'always-show-numbers',
+            title: 'Always show workspace numbers',
+        });
+        addToggle({
+            settings: this._settings,
+            group,
             key: 'show-empty-workspaces',
             title: 'Show empty workspaces',
+            subtitle: 'Also affects switching with scroll wheel'
         });
         addToggle({
             settings: this._settings,

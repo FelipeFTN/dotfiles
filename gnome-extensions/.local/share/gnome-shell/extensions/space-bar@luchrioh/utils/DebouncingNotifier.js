@@ -19,8 +19,9 @@ var DebouncingNotifier = class DebouncingNotifier {
             return GLib.SOURCE_REMOVE;
         });
     }
-    subscribe(callback) {
+    subscribe(callback, until) {
         this._subscribers.push(callback);
+        until?.subscribe(() => (this._subscribers = this._subscribers.filter((s) => s !== callback)));
     }
     destroy() {
         if (this._timeout) {
