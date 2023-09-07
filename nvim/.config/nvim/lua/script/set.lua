@@ -9,6 +9,7 @@ g.mapleader = " "
 
 vim.o.termguicolors = true
 opt.smartindent = true
+opt.encoding= "UTF-8"
 opt.expandtab = true
 opt.hlsearch = false
 opt.incsearch = true
@@ -23,6 +24,9 @@ opt.tabstop = 4
 
 -- Disable autoindent for json
 vim.cmd("autocmd Filetype json let g:indentLine_enabled = 0")
+
+-- Vim DevIcons
+vim.cmd("set encoding=UTF-8")
 
 -- Automatically start coq
 g.coq_settings = { auto_start = false } -- COQ on C & C++ is terrible.

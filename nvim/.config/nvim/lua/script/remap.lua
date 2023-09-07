@@ -2,8 +2,13 @@ local ns = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Netrw
-keymap('n', "<leader>m", ":Explore<CR>", ns)
-keymap('n', "<leader>n", ":Vexplore<CR>", ns)
+-- keymap('n', "<leader>m", ":Explore<CR>", ns)
+-- keymap('n', "<leader>n", ":Vexplore<CR>", ns)
+
+-- NerdTree
+keymap('n', "<leader>m", ":NERDTreeFocus<CR>", ns)
+keymap('n', "<leader>n", ":NERDTreeToggle<CR>", ns)
+
 
 -- Telescope
 keymap('n', '<leader>ff', ":lua require('telescope.builtin').find_files()<CR>", ns)
