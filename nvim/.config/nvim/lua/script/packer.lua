@@ -50,8 +50,9 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'                        -- LSP Injection Lint
   use 'mfussenegger/nvim-dap'                                  -- Debugger
   use 'mfussenegger/nvim-lint'                                 -- Lint
-  use 'preservim/nerdtree'                                     -- Nerd Tree
-  use 'ryanoasis/vim-devicons'                                 -- Better icons
+--   use 'preservim/nerdtree'                                     -- Nerd Tree
+--   use 'ryanoasis/vim-devicons'                                 -- Better icons
+  use 'tpope/vim-vinegar'                                      -- Vinager Netrw
 
   -- Telescope
   local telescope_build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'

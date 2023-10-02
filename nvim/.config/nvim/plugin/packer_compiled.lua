@@ -249,6 +249,11 @@ _G.packer_plugins = {
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/vim-smoothie",
     url = "https://github.com/psliwka/vim-smoothie"
   },
+  ["vim-vinegar"] = {
+    loaded = true,
+    path = "/Users/ftenorio/.local/share/nvim/site/pack/packer/start/vim-vinegar",
+    url = "https://github.com/tpope/vim-vinegar"
+  },
   ["yats.vim"] = {
     loaded = true,
     path = "/home/felipeftn/.local/share/nvim/site/pack/packer/start/yats.vim",
