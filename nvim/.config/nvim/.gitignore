@@ -1,0 +1,5 @@
+# MacOs Files
+.DS_Store
+
+# Neovim Plugin
+plugin/*

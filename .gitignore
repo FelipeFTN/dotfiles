@@ -1,5 +1,5 @@
-# Files
+# MacOs Files
 .DS_Store
 
-# Directories
-../nvim/plugin/*
+# NeoVim - Not working
+**/packer_compiled.lua
