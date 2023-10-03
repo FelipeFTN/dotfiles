@@ -22,6 +22,7 @@ function pulseaudio_config() {
   cat ./pulseaudio >> ./default.pa
   sudo mv ./default.pa /etc/pulse/default.pa
   echo "Run pulseaudio -k to restart pulseaudio"
+  rm -rf ~/.pulse && cp -a ./pulse/.pulse ~/
 }
 
 # Main script
