@@ -5,22 +5,22 @@ local lspconfig = require('lspconfig')
 local opt = vim.opt
 local g = vim.g
 
-g.mapleader = " "
+vim.g.mapleader = " "
 
 vim.o.termguicolors = true
-opt.smartindent = true
-opt.encoding= "UTF-8"
-opt.expandtab = true
-opt.hlsearch = false
-opt.incsearch = true
-opt.softtabstop = 2
-opt.updatetime = 50
-opt.smarttab = true
-opt.guicursor = ""
-opt.shiftwidth = 4
-opt.number = true
-opt.wrap = false
-opt.tabstop = 4
+vim.opt.smartindent = true
+vim.opt.encoding= "UTF-8"
+vim.opt.expandtab = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.softtabstop = 2
+vim.opt.updatetime = 50
+vim.opt.smarttab = true
+vim.opt.guicursor = ""
+vim.opt.shiftwidth = 4
+vim.opt.number = true
+vim.opt.wrap = false
+vim.opt.tabstop = 4
 
 -- Disable autoindent for json
 vim.cmd("autocmd Filetype json let g:indentLine_enabled = 0")
@@ -29,7 +29,7 @@ vim.cmd("autocmd Filetype json let g:indentLine_enabled = 0")
 vim.cmd("set encoding=UTF-8")
 
 -- Automatically start coq
-g.coq_settings = { auto_start = false } -- COQ on C & C++ is terrible.
+vim.g.coq_settings = { auto_start = false } -- COQ on C & C++ is terrible.
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 for _, lsp in ipairs(servers) do

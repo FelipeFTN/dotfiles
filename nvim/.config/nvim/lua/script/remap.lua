@@ -9,7 +9,6 @@ keymap('n', "<leader>n", ":Vexplore<CR>", ns)
 -- keymap('n', "<leader>m", ":NERDTreeFocus<CR>", ns)
 -- keymap('n', "<leader>n", ":NERDTreeToggle<CR>", ns)
 
-
 -- Telescope
 keymap('n', '<leader>ff', ":lua require('telescope.builtin').find_files()<CR>", ns)
 keymap('n', '<leader>fg', ":lua require('telescope.builtin').live_grep()<CR>", ns)

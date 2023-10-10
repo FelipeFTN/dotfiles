@@ -26,21 +26,20 @@ return require('packer').startup(function(use)
   use 'morhetz/gruvbox'	                                       -- Beautiful theme
   use 'Mofiqul/dracula.nvim'                                   -- Beautiful theme
   use 'Yggdroot/indentLine'                                    -- Auto indentation
-  use 'psliwka/vim-smoothie'	                                 -- Makes scrolling smooth
+  use 'psliwka/vim-smoothie'	                               -- Makes scrolling smooth
   use 'mbbill/undotree'                                        -- Undo History
   use 'yuezk/vim-js'                                           -- Javascript Syntax
   use 'HerringtonDarkholme/yats.vim'                           -- Typescript Syntax
-  use 'fatih/vim-go'		                                       -- Golang Syntax
-  use 'vim-ruby/vim-ruby'	                                     -- Ruby Syntax
+  use 'fatih/vim-go'		                               -- Golang Syntax
+  use 'vim-ruby/vim-ruby'	                               -- Ruby Syntax
   use 'loadfms/nvim-chettahsheet'                              -- Online Search Helper
   use 'f-person/git-blame.nvim'                                -- Git Blame
   use 'ms-jpq/coq_nvim'                                        -- Code autocomplete :COQnow
   use 'ms-jpq/coq.artifacts'                                   -- Code autocomplete dependency
   use 'ms-jpq/coq.thirdparty'                                  -- Code autocomplete dependency
   use 'norcalli/snippets.nvim'	                               -- Code snippet
-  use 'justmao945/vim-clang' 	                                 -- C/C++ autocomplete
-  use 'neovim/nvim-lspconfig'	                                 -- Language Server Protocol
-  use 'mfussenegger/nvim-jdtls'                                -- Eclipse LSP
+  use 'justmao945/vim-clang' 	                               -- C/C++ autocomplete
+  use 'neovim/nvim-lspconfig'	                               -- Language Server Protocol
   use 'mhartington/formatter.nvim'                             -- Formatter
   use 'tpope/vim-fugitive'                                     -- Git integration
   use 'williamboman/mason-lspconfig.nvim'                      -- Mason configuration LSP
@@ -50,8 +49,6 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'                        -- LSP Injection Lint
   use 'mfussenegger/nvim-dap'                                  -- Debugger
   use 'mfussenegger/nvim-lint'                                 -- Lint
---   use 'preservim/nerdtree'                                     -- Nerd Tree
---   use 'ryanoasis/vim-devicons'                                 -- Better icons
   use 'tpope/vim-vinegar'                                      -- Vinager Netrw
 
   -- Telescope
