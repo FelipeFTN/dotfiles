@@ -1,8 +1,6 @@
 [user]
 	email = felipe.tenorio123456@gmail.com
 	name = FelipeFTN
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [core]
 	editor = nvim
 [diff]

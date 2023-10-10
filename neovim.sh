@@ -1,6 +1,6 @@
-function setup_neovim() {
+function setup_neovim {
   echo "Installing Packer"
-  git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+  sudo git clone --depth 1 https://github.com/wbthomason/packer.nvim\
    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
   echo "Setting up vim plugins (don't panic if it looks stuck)"

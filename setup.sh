@@ -1,18 +1,17 @@
 #!/bin/bash
-set -euo pipefail
 
-function setup_stow() {
-  echo "Setting up stow"
-  mv ~/.zshrc ~/.zshrc_old
-  stow */
-}
+#function setup_stow() {
+#  echo "Setting up stow"
+  # mv ~/.zshrc ~/.zshrc_old
+#  stow */
+#}
 
 function install_apps() {
   echo "Updating System Packages"
-  sudo pacman -Syu --noconfirm
+  # sudo pacman -Syu --noconfirm
   echo "Installing apps from packages..."
   while read -r app; do
-    sudo pacman -Syy --noconfirm --needed "$app"
+    sudo apt install -y "$app"
   done < ./packages
 }
 
@@ -27,7 +26,7 @@ function pulseaudio_config() {
 
 # Main script
 install_apps
-pulseaudio_config
-setup_stow
+# pulseaudio_config
+#setup_stow
 
 echo "done!"
