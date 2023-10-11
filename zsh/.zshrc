@@ -22,8 +22,11 @@ alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
 # Dotfiles
 alias dotfiles="cd ~/dotfiles/ && nvim ~/dotfiles"
 
-# neovim config
+# Neovim config
 alias dotnvim="cd ~/dotfiles/nvim/.config/nvim && nvim ."
+
+# Ripgrep files
+alias rgf='rg --files | rg -i '
 
 # Text Editor
 export EDITOR="nvim"
