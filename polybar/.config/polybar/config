@@ -51,16 +51,16 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Fira Code Nerd Font:weight=regular:size=8"
+font-0 = "Fira Code Nerd Font:weight=regular:size=10"
 ; font-1 = "Fira Code Nerd Font:weight=regular:size=8"
 ; font-2 = "Fira Code Nerd Font:weight=regular:size=8"
 ; font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm i3 mpd
-modules-center = xwindow
-modules-right = xkeyboard memory cpu battery date
+modules-left = bspwm i3 xwindow
+modules-center = date
+modules-right = xkeyboard memory cpu battery
 
 tray-position = right
 tray-padding = 2
@@ -261,17 +261,17 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
-date =
-date-alt = " %Y-%m-%d"
+date = " %Y/%m/%d"
+date-alt = " %Y/%m/%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = "󱑁"
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+; format-underline = #0a6cf5
 
 label = %date% %time%
 
