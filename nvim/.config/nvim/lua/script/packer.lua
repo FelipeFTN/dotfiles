@@ -30,8 +30,8 @@ return require('packer').startup(function(use)
   use 'mbbill/undotree'                                        -- Undo History
   use 'yuezk/vim-js'                                           -- Javascript Syntax
   use 'HerringtonDarkholme/yats.vim'                           -- Typescript Syntax
-  use 'fatih/vim-go'		                               -- Golang Syntax
-  use 'vim-ruby/vim-ruby'	                               -- Ruby Syntax
+  use 'fatih/vim-go'    		                               -- Golang Syntax
+  use 'vim-ruby/vim-ruby'   	                               -- Ruby Syntax
   use 'loadfms/nvim-chettahsheet'                              -- Online Search Helper
   use 'f-person/git-blame.nvim'                                -- Git Blame
   use 'ms-jpq/coq_nvim'                                        -- Code autocomplete :COQnow
@@ -50,6 +50,7 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap'                                  -- Debugger
   use 'mfussenegger/nvim-lint'                                 -- Lint
   use 'tpope/vim-vinegar'                                      -- Vinager Netrw
+  use 'dylanaraps/wal.vim'                                     -- PyWall Integration
 
   -- Telescope
   local telescope_build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'

@@ -8,9 +8,10 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-import:
+# import:
 #  - /path/to/alacritty.yml
-  - ~/.config/alacritty/dracula.yml
+#  - ~/.config/alacritty/dracula.yml
+#  - ~/.cache/wal/colors-alacritty.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -69,7 +70,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.9
+  opacity: 0.85
 
   # Startup Mode (changes require restart)
   #
