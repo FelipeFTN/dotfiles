@@ -23,13 +23,16 @@ default_border none
 
 # Keyboard layout
 # exec "setxkbmap -layout us,br -option grp:win_space_toggle"
-exec_always "setxkbmap -layout us,br -option grp:alt_space_toggle"
+exec_always --no-startup-id "setxkbmap -layout us,br -option grp:alt_space_toggle"
 
 # Nitrogen wallpaper
 # exec_always --no-startup-id nitrogen --restore
 
 # Feh wallpaper
-exec_always feh --bg-scale ~/Documents/wallpaper.png
+exec_always --no-startup-id feh --bg-scale ~/Documents/wallpaper.png
+
+# Pywal color scheme
+exec_always --no-startup-id wal -R -q
 
 # RedShift
 exec --no-startup-id redshift -l -23.5475:-46.63611

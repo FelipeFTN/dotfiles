@@ -10,10 +10,16 @@ keymap('n', "<leader>n", ":Vexplore<CR>", ns)
 -- keymap('n', "<leader>n", ":NERDTreeToggle<CR>", ns)
 
 -- Telescope
-keymap('n', '<leader>ff', ":lua require('telescope.builtin').find_files()<CR>", ns)
-keymap('n', '<leader>fg', ":lua require('telescope.builtin').live_grep()<CR>", ns)
-keymap('n', '<leader>fb', ":lua require('telescope.builtin').buffers()<CR>", ns)
-keymap('n', '<leader>fh', ":lua require('telescope.builtin').help_tags()<CR>", ns)
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+-- local builtin = require('telescope.builtin')
+-- keymap('n', '<leader>ff', builtin.find_files(), ns)
+-- keymap('n', '<leader>fg', builtin.live_grep, ns)
+-- keymap('n', '<leader>fb', builtin.buffers, ns)
+-- keymap('n', '<leader>fh', builtin.help_tags, ns)
 
 -- Formatter
 keymap('n', '<leader>f', ':Format<CR>', ns)
