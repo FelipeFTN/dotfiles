@@ -1,3 +1,10 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
 
 # Pywal - Color Schemes
 #
@@ -26,6 +33,9 @@ alias dotnvim="cd ~/dotfiles/nvim/.config/nvim && nvim ."
 
 # Ripgrep files
 alias rgf='rg --files | rg -i '
+
+# i3 setup
+# alias doti3='cd ~/.config/i3 && nvim ~/.config/i3'
 
 # Text Editor
 export EDITOR="nvim"
