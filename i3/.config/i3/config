@@ -31,7 +31,7 @@ exec_always --no-startup-id "setxkbmap -layout us,br -option grp:alt_space_toggl
 # Feh wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Documents/wallpaper.png
 
-exec --no-startup-id wal -i ~/Documents/wallpaper.png
+exec --no-startup-id wal -i ~/Documents/wallpaper.png --backend wal --saturate 1
 
 # Pywal color scheme
 exec_always --no-startup-id wal -R -q
@@ -92,6 +92,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # Rofi (a program launcher)
+bindsym $mod+c exec --no-startup-id rofi -show calc
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+x exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 bindsym $mod+period exec --no-startup-id rofi -show emoji
