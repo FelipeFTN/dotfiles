@@ -35,8 +35,8 @@ primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 
-[bar/felipeftn]
-; monitor = ${env:MONITOR:HDMI-1}
+[bar/main]
+monitor = ${env:MONITOR:}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -66,21 +66,17 @@ font-0 = "Fira Code Nerd Font:weight=regular:size=10"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm i3 xwindow
+modules-left = i3 xwindow
 modules-center = date
-modules-right = xkeyboard memory cpu battery
+modules-right = xkeyboard memory cpu battery pulseaudio-control-input pulseaudio-control-output
 
-tray-position = right
-tray-padding = 2
+; tray-position = right
+; tray-padding = 2
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
 wm-restack = i3
 
 ;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -118,28 +114,6 @@ label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -147,7 +121,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -283,32 +257,40 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 label = %date% %time%
 
-[module/pulseaudio]
-type = internal/pulseaudio
+# Install pulseaudio-control github.com/marioortizmanero/polybar-pulseaudio-control
+# Copy it to path: chmod +x pulseaudio-control && cp pulseaudio-control ~/.local/bin
+[module/pulseaudio-control-output]
+type = custom/script
+tail = true
+format-underline = ${colors.cyan}
+label-padding = 2
+label-foreground = ${colors.foreground}
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
-label-volume-foreground = ${root.foreground}
+# Icons mixed from Font Awesome 5 and Material Icons
+# You can copy-paste your options for each possible action, which is more
+# trouble-free but repetitive, or apply only the relevant ones (for example
+# --node-blacklist is only needed for next-node).
+exec = pulseaudio-control --icons-volume " , " --icon-muted " " --node-nicknames-from "device.description" --node-nickname "alsa_output.pci-0000_00_1b.0.analog-stereo:  Speakers" --node-nickname "alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo:  Headphones" listen
+click-right = exec pavucontrol &
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --node-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-node
+scroll-up = pulseaudio-control --volume-max 130 up
+scroll-down = pulseaudio-control --volume-max 130 down
 
-label-muted = 🔇 muted
-label-muted-foreground = #666
+[module/pulseaudio-control-input]
+type = custom/script
+tail = true
+format-underline = ${colors.cyan}
+label-padding = 2
+label-foreground = ${colors.foreground}
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+# Use --node-blacklist to remove the unwanted PulseAudio .monitor that are child of sinks
+exec = pulseaudio-control  --node-type input --icons-volume "" --icon-muted "" --node-nickname "alsa_output.pci-0000_0c_00.3.analog-stereo:  Webcam" --node-nickname "alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo:  Headphones" --node-blacklist "*.monitor" listen
+click-right = exec pavucontrol &
+click-left = pulseaudio-control --node-type input togmute
+click-middle = pulseaudio-control --node-type input next-node
+scroll-up = pulseaudio-control --node-type input --volume-max 130 up
+scroll-down = pulseaudio-control --node-type input --volume-max 130 down
 
 [module/alsa]
 type = internal/alsa
@@ -400,17 +382,6 @@ content-foreground = green
 
 click-left = ~/.config/rofi/launchers/type-1/launcher.sh
 click-right = launcher_t1
-
-;; Power Menu Module
-[module/powermenu]
-type = custom/text
-
-content = 襤
-content-background = black
-content-foreground = red
-
-click-left = ~/.config/rofi/powermenu/type-1/powermenu.sh
-click-right = powermenu_t1
 
 [settings]
 screenchange-reload = true
