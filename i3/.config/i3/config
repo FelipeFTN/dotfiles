@@ -40,7 +40,7 @@ exec_always --no-startup-id wal -R -q
 exec --no-startup-id redshift -l -23.5475:-46.63611
 
 # Picom transparency
-exec --no-startup-id picom --experimental-backends -b
+exec --no-startup-id picom -b
 
 # Dunst notifications
 exec --no-startup-id dunst
