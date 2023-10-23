@@ -53,10 +53,10 @@ return require('packer').startup(function(use)
   use 'dylanaraps/wal.vim'                                     -- PyWall Integration
 
   -- Telescope
-  local telescope_build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = telescope_build }
-  use 'nvim-lua/plenary.nvim'
+  use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.4',
+   requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
   -- 'BurntSushi/ripgrep'       - Install Manually
   -- 'sharkdp/fd'               - Install Manually
