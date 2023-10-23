@@ -45,6 +45,12 @@ export VISUAL="nvim"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
+# Export bin PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Go PATH
+export PATH=$PATH:/usr/local/go/bin
+
 # Rust
 export PATH="$PATH:$HOME/.cargo/env"
 
