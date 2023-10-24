@@ -102,8 +102,8 @@ default_border none
 # for_window [class="^.*"] border pixel 0
 
 # Gaps - i3 4.22
-gaps inner 8px
-gaps outer 8px
+gaps inner 4px
+gaps outer 4px
 
 # install maim xclip copyq xdotool
 # Screenshot
