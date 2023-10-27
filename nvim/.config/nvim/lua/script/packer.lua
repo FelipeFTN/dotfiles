@@ -23,7 +23,6 @@ return require('packer').startup(function(use)
   use 'ryanoasis/vim-devicons'                                 -- Better icons
   use 'jiangmiao/auto-pairs'                                   -- Autoclosing Brackets
   use 'tpope/vim-commentary'                                   -- Better commentary adding
-  use 'morhetz/gruvbox'	                                       -- Beautiful theme
   use 'Mofiqul/dracula.nvim'                                   -- Beautiful theme
   use 'Yggdroot/indentLine'                                    -- Auto indentation
   use 'psliwka/vim-smoothie'	                               -- Makes scrolling smooth

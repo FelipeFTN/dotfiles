@@ -11,13 +11,13 @@ source $ZSH/oh-my-zsh.sh
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
+### (cat ~/.cache/wal/sequences &)
 #
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+### cat ~/.cache/wal/sequences
 #
 # To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
+### source ~/.cache/wal/colors-tty.sh
 
 # Use TMUX
 if [ "$TMUX" = "" ]; then tmux; fi
@@ -31,11 +31,14 @@ alias dotfiles="cd ~/dotfiles/ && nvim ~/dotfiles"
 # Neovim config
 alias dotnvim="cd ~/dotfiles/nvim/.config/nvim && nvim ."
 
+# i3 setup
+alias doti3='cd ~/.config/i3 && nvim ~/.config/i3/config'
+
+# zsh config
+alias dotzsh='cd ~/ && nvim ~/.zshrc'
+
 # Ripgrep files
 alias rgf='rg --files | rg -i '
-
-# i3 setup
-# alias doti3='cd ~/.config/i3 && nvim ~/.config/i3'
 
 # Text Editor
 export EDITOR="nvim"

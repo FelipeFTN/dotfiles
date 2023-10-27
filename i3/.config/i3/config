@@ -20,21 +20,24 @@ exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/activ
 
 # Border
 default_border none
+default_floating_border none
+# for_window [class="^.*"] border pixel 0
+
+# Gaps - i3 v4.22
+gaps inner 4px
+gaps outer 4px
 
 # Keyboard layout
 # exec "setxkbmap -layout us,br -option grp:win_space_toggle"
 exec_always --no-startup-id "setxkbmap -layout us,br -option grp:alt_space_toggle"
 
-# Nitrogen wallpaper
-# exec_always --no-startup-id nitrogen --restore
-
 # Feh wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Documents/wallpaper.png
 
 # Pywal color scheme - install colorz using pip3
-exec --no-startup-id wal -i ~/Documents/wallpaper.png --backend colorz --saturate 1
+# exec --no-startup-id wal -i ~/Documents/wallpaper.png --backend colorz --saturate 1
 
-exec_always --no-startup-id wal -R -q
+# exec_always --no-startup-id wal -R -q
 
 # RedShift
 exec --no-startup-id redshift -l -23.5475:-46.63611
@@ -96,14 +99,6 @@ bindsym $mod+c exec --no-startup-id rofi -show calc
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+x exec --no-startup-id rofi -show power-menu -modi power-menu:rofi-power-menu
 bindsym $mod+period exec --no-startup-id rofi -show emoji
-
-# Border decoration
-default_border none
-# for_window [class="^.*"] border pixel 0
-
-# Gaps - i3 4.22
-gaps inner 4px
-gaps outer 4px
 
 # install maim xclip copyq xdotool
 # Screenshot
@@ -237,19 +232,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use 
-# from the generated scheme.
-# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
-# it fails to get colors from Xresources.
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+### Dracula
+#  class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
+client.background       #F8F8F2
+
+### Pywal
+# set_from_resource $fg i3wm.color7 #f0f0f0
+# set_from_resource $bg i3wm.color2 #f0f0f0
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+# client.focused          $bg     $bg     $fg  $bg       $bg
+# client.focused_inactive $bg     $bg     $fg  $bg       $bg
+# client.unfocused        $bg     $bg     $fg  $bg       $bg
+# client.urgent           $bg     $bg     $fg  $bg       $bg
+# client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-client.background       $bg
+# client.background       $bg
