@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 ### source ~/.cache/wal/colors-tty.sh
 
 # Use TMUX
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then ta; fi
 
 # MySecurity
 alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
