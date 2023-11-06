@@ -27,6 +27,9 @@ default_floating_border none
 gaps inner 4px
 gaps outer 4px
 
+# Default layout mode tab
+workspace_layout tabbed
+
 # Picture-in-Picture Firefox
 for_window [window_role="PictureInPicture"] sticky enable
 
