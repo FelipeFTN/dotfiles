@@ -50,6 +50,7 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-lint'                                 -- Lint
   use 'tpope/vim-vinegar'                                      -- Vinager Netrw
   use 'dylanaraps/wal.vim'                                     -- PyWall Integration
+  use 'chrisbra/Colorizer'                                     -- Show Colors
 
   -- Telescope
   use {

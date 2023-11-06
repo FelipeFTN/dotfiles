@@ -63,6 +63,9 @@ exec_always --no-startup-id ~/.config/polybar/launch
 # Alsamixer
 bindsym $mod+Ctrl+m exec alacritty -e 'alsamixer'
 
+# Ranger - File Manager
+bindsym $mod+Shift+f exec alacritty -e 'ranger'
+
 # Firefox
 bindsym $mod+Ctrl+f exec firefox
 
