@@ -37,6 +37,9 @@ alias doti3='cd ~/.config/i3 && nvim ~/.config/i3/config'
 # zsh config
 alias dotzsh='cd ~/ && nvim ~/.zshrc'
 
+# cbonsai
+alias tree='cbonsai --seed 119 --live --infinite --base 2'
+
 # Ripgrep files
 alias rgf='rg --files | rg -i '
 
