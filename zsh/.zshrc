@@ -43,6 +43,9 @@ alias tree='cbonsai --seed 119 --live --infinite --base 2'
 # Ripgrep files
 alias rgf='rg --files | rg -i '
 
+# Work directory
+alias work='cd ~/Desktop/Work/ && cd '
+
 # Text Editor
 export EDITOR="nvim"
 export VISUAL="nvim"
