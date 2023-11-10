@@ -1,8 +1,11 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
+local coq = require('coq')
+
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.rust_analyzer.setup {}
+lspconfig.gopls.setup {}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -68,8 +71,20 @@ require('lspconfig')['pylsp'].setup{
 	flags = lsp_flags,
 }
 require('lspconfig')['gopls'].setup{
-	on_attach = on_attach,
-	flags = lsp_flags,
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+    cmd = { "gopls" },
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    settings = {
+        gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+                unusedparams = true,
+            },
+        },
+    },
 }
 require('lspconfig')['phpactor'].setup{
 	on_attach = on_attach,

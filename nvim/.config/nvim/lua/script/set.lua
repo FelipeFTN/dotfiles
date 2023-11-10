@@ -31,6 +31,11 @@ vim.cmd("set encoding=UTF-8")
 -- Automatically start coq
 vim.g.coq_settings = { auto_start = false } -- COQ on C & C++ is terrible.
 
+-- Configure auto-pairs to stop conflicting with coq
+require('nvim-autopairs').setup{
+  map_cr = false,
+}
+
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup(require('coq').lsp_ensure_capabilities({

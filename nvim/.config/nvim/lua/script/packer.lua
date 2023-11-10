@@ -21,7 +21,10 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'                                -- Statusbar
   use 'folke/tokyonight.nvim'                                  -- A better theme, but bugged 
   use 'ryanoasis/vim-devicons'                                 -- Better icons
-  use 'jiangmiao/auto-pairs'                                   -- Autoclosing Brackets
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end -- Autoclosing Brackets
+  }
   use 'tpope/vim-commentary'                                   -- Better commentary adding
   use 'Mofiqul/dracula.nvim'                                   -- Beautiful theme
   use 'Yggdroot/indentLine'                                    -- Auto indentation
