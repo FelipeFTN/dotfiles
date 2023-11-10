@@ -58,7 +58,10 @@ export PATH="$PATH:$GEM_HOME/bin"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Go PATH
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
+export GOPATH=$HOME/go
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/env"
