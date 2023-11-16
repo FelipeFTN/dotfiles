@@ -23,6 +23,7 @@ foreground = #F8F8F2
 foreground-alt = ${xrdb:color7:#222}
 secondary = #44475A
 alert = #6272A4
+error = #FF5555
 
 [bar/main]
 monitor = ${env:MONITOR:}
@@ -57,7 +58,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3 xwindow
 modules-center = date
-modules-right = memory cpu battery pulseaudio-control-input pulseaudio-control-output
+modules-right = memory cpu filesystem wlan eth battery pulseaudio-control-input pulseaudio-control-output
 
 ; tray-position = right
 ; tray-padding = 2
@@ -75,7 +76,7 @@ cursor-click = pointer
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:65:...%
+label = %title:0:35:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -93,13 +94,16 @@ label-indicator-underline =
 
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 30
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+format-mounted = <label-mounted>
+label-mounted =  󰋊 %percentage_used%%
+
+format-warn = <label-warn>
+label-warn = 󰋊 %percentage_used%%
+label-warn-foreground = ${colors.error}
 
 [module/i3]
 type = internal/i3
@@ -176,35 +180,36 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-; format-underline = #f90000
-format-underline = 
 label = %percentage:2%%
+format-warn = <label-warn>
+label-warn = %percentage:2%%
+label-warn-foreground = ${colors.error}
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "󰍛 "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-; format-underline = #4bffdc
 label = %percentage_used%%
+format-warn = <label-warn>
+label-warn = %percentage_used%
+label-warn-foreground = ${colors.error}
 
 [module/wlan]
 type = internal/network
 interface = wlp59s0
+interface-type = wlan
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-; format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = 
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected = 󰖪
+label-disconnected-foreground = ${colors.error}
+format-disconnected = <label-disconnected>
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -215,33 +220,31 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s31f6
+; interface = enp0s31f6
+interface = enp8s0
 interval = 3.0
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+format-connected-underline = 
+format-connected-prefix = 
+label-connected = 
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected-underline =
+format-disconnected = <label-disconnected>
+label-disconnected-foreground = ${colors.error}
+label-disconnected = 󰈂 
 
 [module/date]
 type = internal/date
 interval = 1
 
-date = " %Y/%m/%d"
-date-alt = " %Y/%m/%d"
+date = "%b %d"
+date-alt = "%a - %d/%m/%Y -"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = "󱑁"
+format = "<label>"
 format-prefix-foreground = ${colors.foreground-alt}
-; format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -273,34 +276,6 @@ click-middle = pulseaudio-control --node-type input next-node
 scroll-up = pulseaudio-control --node-type input --volume-max 130 up
 scroll-down = pulseaudio-control --node-type input --volume-max 130 down
 
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
 [module/battery]
 type = internal/battery
 battery = BAT0
@@ -308,11 +283,11 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-; format-charging-underline = #ffb52a
 format-charging-underline = 
 
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging = 
+; format-discharging = <animation-discharging> <label-discharging>
+; format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = "  "
 format-full-prefix-foreground = ${colors.foreground-alt}
