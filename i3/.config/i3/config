@@ -1,4 +1,4 @@
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -81,7 +81,8 @@ assign [class="firefox"] 2
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# Picom should make the lockscreen transparent thanks to --color attribute from i3lock-color 
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --color=00000000
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -102,6 +103,9 @@ bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# Lockscreen
+bindsym $mod+Ctrl+l exec --no-startup-id i3lock --nofork --color=00000000
 
 # Rofi (a program launcher)
 bindsym $mod+c exec --no-startup-id rofi -show calc
