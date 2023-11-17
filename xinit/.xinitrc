@@ -1,2 +1,5 @@
-# PyWal color scheme
-wal -R -q
+# Load Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+# Keyboard
+setxkbmap -layout us
