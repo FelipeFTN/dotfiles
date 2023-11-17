@@ -115,11 +115,10 @@ wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
-
 strip-wsnumbers = true
 
 label-mode = %mode%
-label-mode-padding = 3
+label-mode-padding = 1
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
@@ -136,7 +135,6 @@ label-unfocused-padding = 1
 ; visible = Active workspace on unfocused monitor
 label-visible = %{T4}%name%
 label-visible-background = ${self.label-focused-background}
-; label-visible-underline = ${self.label-focused-underline}
 label-visible-underline = 
 label-visible-padding = ${self.label-focused-padding}
 
@@ -146,7 +144,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
 ; Separator in between workspaces
-label-separator = %{T3}-
+label-separator = "%{T3} "
 
 [module/mpd]
 type = internal/mpd
