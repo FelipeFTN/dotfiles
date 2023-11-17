@@ -7,4 +7,4 @@ local autocmd = vim.api.nvim_create_autocmd
 -- })
 
 -- Nvim-tree Callback
-autocmd("VimEnter", { callback = require("custom.configs.nvim-tree") })
+autocmd("VimEnter", { callback = require "custom.configs.nvim-tree" })
