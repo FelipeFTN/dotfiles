@@ -3,3 +3,6 @@
 
 # NeoVim - Not working
 **/packer_compiled.lua
+
+# Rofi
+**/rofi_calc_history
