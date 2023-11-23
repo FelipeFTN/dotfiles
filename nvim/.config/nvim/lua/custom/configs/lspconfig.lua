@@ -15,6 +15,8 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Manual LSP configuration
+
+-- Golang
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -30,6 +32,12 @@ lspconfig.gopls.setup {
       },
     },
   },
+}
+
+-- Terraform
+lspconfig.terraformls.setup {
+  cmd = { "terraform-ls", "serve" },
+  filetypes = { "terraform", "tf" },
 }
 
 --
