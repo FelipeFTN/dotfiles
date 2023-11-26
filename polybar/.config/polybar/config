@@ -76,7 +76,7 @@ cursor-click = pointer
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:35:...%
+label = %class:0:35:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
