@@ -1,6 +1,6 @@
 configuration{
     modi: "run,drun,window,emoji,calc";
-    icon-theme: "Oranchelo";
+    icon-theme: "Papirus";
     show-icons: true;
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
@@ -9,9 +9,9 @@ configuration{
     hide-scrollbar: true;
     display-drun: "   Apps ";
     display-run: "   Run ";
-    display-window: " 﩯  Window";
+    display-window: "﩯  Window";
     display-emoji: "😄 Emoji";
-    display-calc: "➕Calc";
+    display-calc: "➕ Calc";
     display-Network: " 󰤨  Network";
     sidebar-mode: true;
 }
