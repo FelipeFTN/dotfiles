@@ -29,8 +29,6 @@ fixed-center = true
 width = 100%
 height = 35
 radius = 6.0
-; offset-x = 15%
-; offset-y = 15%
 
 border-top-size = 17
 border-left-size = 17
@@ -56,14 +54,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = "Noto Serif:size=11:weight=Regular;2"
 
-modules-left = i3 xwindow
+modules-left = i3 tray
 modules-center = date
 modules-right = memory cpu filesystem wlan eth battery pulseaudio-control-input pulseaudio-control-output
-
-; tray-position = right
-; tray-padding = 2
-; tray-background = #0063ff
-; tray-foreground = #0063ff
 
 wm-restack = i3
 
@@ -317,43 +310,11 @@ animation-discharging-2 = " "
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+[module/tray]
+type = internal/tray
 
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
-
-;; Application Launcher Module
-[module/launcher]
-type = custom/text
-
-content = 異
-content-background = black
-content-foreground = green
-
-click-left = ~/.config/rofi/launchers/type-1/launcher.sh
-click-right = launcher_t1
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
+tray-spacing = 20px
+tray-size = 15px
 
 [global/wm]
 margin-top = 5
