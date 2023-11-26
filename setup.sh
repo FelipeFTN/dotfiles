@@ -11,8 +11,8 @@ function install_apps() {
   # sudo pacman -Syu --noconfirm
   echo "Installing apps from packages..."
   while read -r app; do
-    sudo apt install -y "$app"
-  done < ./packages
+    sudo pacman -Sy --noconfirm "$app"
+  done < ./i3_packages
 }
 
 function pulseaudio_config() {
@@ -26,7 +26,7 @@ function pulseaudio_config() {
 
 # Main script
 install_apps
-# pulseaudio_config
+pulseaudio_config
 #setup_stow
 
 echo "done!"
