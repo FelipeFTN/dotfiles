@@ -25,27 +25,34 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
-    -- lua stuff
+    -- Lua stuff
     "lua-language-server",
     "stylua",
 
-    -- web dev stuff
+    -- Web dev stuff
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
     "deno",
     "prettier",
 
-    -- c/cpp stuff
+    -- C/CPP stuff
     "clangd",
     "clang-format",
 
     -- Go
     "gopls",
+    "gofumpt",
+    "goimports",
+    "goimports-reviser",
+    "golines",
+
+    -- Terraform
+    "terraform-ls"
   },
 }
 
--- git support in nvimtree
+-- Git support in nvimtree
 M.nvimtree = {
   git = {
     enable = true,
