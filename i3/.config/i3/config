@@ -35,7 +35,8 @@ exec_always --no-startup-id "setxkbmap -layout us -variant altgr-intl"
 exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper.png
 
 # RedShift
-exec --no-startup-id redshift -l -23.5475:-46.63611
+# I'm setting my redshift manually
+# exec --no-startup-id redshift -l -23.5475:-46.63611
 
 # Picom transparency
 exec --no-startup-id picom -b
