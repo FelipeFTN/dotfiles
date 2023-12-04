@@ -28,7 +28,6 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
@@ -57,6 +56,13 @@ local plugins = {
     build = function()
       vim.cmd [[silent! GoInstallDeps]]
     end,
+  },
+  { -- Smooth Scroll
+    "karb94/neoscroll.nvim",
+    config = function ()
+      require('neoscroll').setup {}
+    end,
+    lazy = false,
   },
 
   -- To make a plugin not be loaded

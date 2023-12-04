@@ -3,3 +3,6 @@
 
 # Neovim Plugin
 plugin/*
+
+# Lazy lock
+lazy-lock.json
