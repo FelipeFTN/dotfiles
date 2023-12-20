@@ -15,13 +15,20 @@
 ;==========================================================
 
 [colors]
-primary = #44475A
-background = #31304D
+; primary = #44475A
+; background = #31304D
+; foreground = #F8F8F2
+; foreground-alt = #F8F8F2
+; secondary = #44475A
+; alert = #6272A4
+; error = #FF5555
+primary = ${xrdb:color0}
+background = ${xrdb:background}
 foreground = #F8F8F2
 foreground-alt = #F8F8F2
 secondary = #44475A
-alert = #6272A4
-error = #FF5555
+alert = ${xrdb:color2}
+error = ${xrdb:color1}
 
 [bar/main]
 monitor = ${env:MONITOR:}
@@ -56,7 +63,7 @@ font-3 = "Noto Serif:size=11:weight=Regular;2"
 
 modules-left = i3
 modules-center = date
-modules-right = memory cpu filesystem wlan eth battery pulseaudio-control-input pulseaudio-control-output
+modules-right = musicinfo memory cpu filesystem wlan eth battery pulseaudio-control-input pulseaudio-control-output
 
 wm-restack = i3
 
@@ -319,5 +326,15 @@ tray-size = 15px
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
+[module/musicinfo]
+type = custom/script
+
+exec = ~/.config/polybar/music.sh
+interval = 5
+format = <label>
+label = %output:0:62:%
+format-padding = 10
+format-foreground = ${xrdb:color8}
 
 ; vim:ft=dosini
