@@ -261,7 +261,7 @@ type = custom/script
 tail = true
 label-padding = 0
 
-exec = pulseaudio-control --icons-volume " , " --icon-muted " " --node-nicknames-from "device.name" listen
+exec = pulseaudio-control --icons-volume " , " --icon-muted " " --node-nicknames-from "device.nothing" listen
 click-right = exec pavucontrol &
 click-left = pulseaudio-control togmute
 click-middle = pulseaudio-control --node-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-node
@@ -276,7 +276,7 @@ label-padding = 0
 label-foreground = ${colors.foreground}
 
 # Use --node-blacklist to remove the unwanted PulseAudio .monitor that are child of sinks
-exec = pulseaudio-control  --node-type input --icons-volume "" --icon-muted " " --node-blacklist "*.monitor" --node-nicknames-from "device.name" listen
+exec = pulseaudio-control  --node-type input --icons-volume "" --icon-muted " " --node-blacklist "*.monitor" --node-nicknames-from "device.nothing" listen
 click-right = exec pavucontrol &
 click-left = pulseaudio-control --node-type input togmute
 click-middle = pulseaudio-control --node-type input next-node
