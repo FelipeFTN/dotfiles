@@ -59,6 +59,9 @@ export PATH="$PATH:$GEM_HOME/bin"
 
 # Export bin PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 # Go PATH
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

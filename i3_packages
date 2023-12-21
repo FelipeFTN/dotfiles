@@ -8,6 +8,8 @@ polybar
 picom
 alacritty
 rofi
+rofi-emoji
+rofi-calc
 yay
 pavucontrol
 pulseaudio
@@ -18,7 +20,13 @@ python-pywal
 noisetorch
 bashtop
 neofetch
-maim xclip copyq xdotool
+maim
+xclip
+copyq
+xdotool
+xss-lock
 gamemode
 lxappearance
 playerctl
+dex
+dunst
