@@ -27,3 +27,5 @@ yay
 make
 pkg-config
 qbittorrent
+zip
+unzip
