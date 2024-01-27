@@ -25,19 +25,19 @@ alias dotfiles="cd ~/dotfiles/ && nvim ~/dotfiles"
 alias dotnvim="cd ~/dotfiles/nvim/.config/nvim && nvim ."
 
 # i3 setup
-alias doti3='cd ~/.config/i3 && nvim ~/.config/i3/config'
+alias doti3="cd ~/.config/i3 && nvim ~/.config/i3/config"
 
 # zsh config
-alias dotzsh='cd ~/ && nvim ~/.zshrc'
+alias dotzsh="cd ~/ && nvim ~/.zshrc"
 
 # cbonsai
-alias tree='cbonsai --seed 119 --live --infinite --base 2'
+alias tree="cbonsai --seed 119 --live --infinite --base 2"
 
 # Ripgrep files
-alias rgf='rg --files | rg -i '
+alias rgf="rg --files | rg -i "
 
 # Work directory
-alias work='cd ~/Desktop/Work/ && cd '
+alias work="cd ~/Desktop/Work/ && cd "
 
 # Text Editor
 export EDITOR="nvim"
