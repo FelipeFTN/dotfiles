@@ -31,13 +31,16 @@ alias doti3="cd ~/.config/i3 && nvim ~/.config/i3/config"
 alias dotzsh="cd ~/ && nvim ~/.zshrc"
 
 # cbonsai
-alias tree="cbonsai --seed 119 --live --infinite --base 2"
+alias ctree="cbonsai --seed 119 --live --infinite --base 2"
 
-# Ripgrep files
-alias rgf="rg --files | rg -i "
+# Get help with linux commands
+alias help="compgen -c | fzf | xargs man"
+
+# Open files in Neovim
+alias nf="fd --type f | fzf -m --exact | xargs n"
 
 # Work directory
-alias work="cd ~/Desktop/Work/ && cd "
+alias work="cd ~/Desktop/Work/"
 
 # Text Editor
 export EDITOR="nvim"
