@@ -12,9 +12,6 @@ local opts = {
     -- Lua
     b.formatting.stylua,
 
-    -- cpp
-    b.formatting.clang_format,
-
     -- Go
     b.formatting.gofumpt, -- mvdan.cc/gofumpt
     b.formatting.goimports_reviser, -- github.com/incu6us/goimports_reviser

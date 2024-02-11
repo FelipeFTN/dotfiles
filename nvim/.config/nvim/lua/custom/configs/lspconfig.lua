@@ -40,5 +40,11 @@ lspconfig.terraformls.setup {
   filetypes = { "terraform", "tf" },
 }
 
+-- Clangd
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities = { offsetEncoding = { "utf-16" }},
+}
+
 --
 -- lspconfig.pyright.setup { blabla}

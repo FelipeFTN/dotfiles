@@ -38,7 +38,6 @@ M.mason = {
 
     -- C/CPP stuff
     "clangd",
-    "clang-format",
 
     -- Go
     "gopls",
