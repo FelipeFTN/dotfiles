@@ -39,6 +39,9 @@ alias help="compgen -c | fzf | xargs man"
 # Open files in Neovim
 alias nf="fd --type f | fzf -m --exact | xargs n"
 
+# List file size with device usage
+alias lsize="du -ah | head"
+
 # Work directory
 alias work="cd ~/Desktop/Work/"
 
