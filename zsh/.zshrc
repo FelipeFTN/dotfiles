@@ -36,6 +36,9 @@ alias ctree="cbonsai --seed 119 --live --infinite --base 2"
 # Get help with linux commands
 alias help="compgen -c | fzf | xargs man"
 
+# Get my most used commands
+# alias stories="history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10"
+
 # Open files in Neovim
 alias nf="fd --type f | fzf -m --exact | xargs n"
 
@@ -70,3 +73,4 @@ export PATH="$PATH:$HOME/.cargo/env"
 
 # XTerm-256color
 export TERM="xterm-256color"
+eval "$(zoxide init zsh)"
