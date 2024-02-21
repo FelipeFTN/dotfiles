@@ -5,7 +5,7 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "asm_lsp", "terraformls", "rust_analyzer" }
+local servers = { "html", "cssls", "tsserver", "clangd", "asm_lsp", "terraformls", "rust_analyzer", "phpactor" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -43,7 +43,7 @@ lspconfig.terraformls.setup {
 -- Clangd
 lspconfig.clangd.setup {
   on_attach = on_attach,
-  capabilities = { offsetEncoding = { "utf-16" }},
+  capabilities = { offsetEncoding = { "utf-16" } },
 }
 
 --

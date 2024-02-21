@@ -146,19 +146,6 @@ label-urgent-padding = 1
 ; Separator in between workspaces
 label-separator = "%{T3} "
 
-[module/mpd]
-type = internal/mpd
-format-online = <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = "<"
-icon-stop = "X"
-icon-play = "V"
-icon-pause = "-"
-icon-next = ">"
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
 [module/xbacklight]
 type = internal/xbacklight
 
