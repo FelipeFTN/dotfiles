@@ -47,7 +47,7 @@ M.mason = {
     "golines",
 
     -- Terraform
-    "terraform-ls"
+    "terraform-ls",
   },
 }
 
@@ -55,6 +55,7 @@ M.mason = {
 M.nvimtree = {
   git = {
     enable = true,
+    ignore = false,
   },
 
   renderer = {
