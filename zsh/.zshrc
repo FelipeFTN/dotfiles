@@ -48,6 +48,9 @@ alias lsize="du -ah | head"
 # Work directory
 alias work="cd ~/Desktop/Work/"
 
+# Memos note taking
+alias memos="docker run -d --name memos -p 5230:5230 -v ~/.memos/:/var/opt/memos neosmemo/memos:stable"
+
 # Text Editor
 export EDITOR="nvim"
 export VISUAL="nvim"
