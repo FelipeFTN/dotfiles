@@ -22,8 +22,8 @@
 ; secondary = #44475A
 ; alert = #6272A4
 ; error = #FF5555
-primary = ${xrdb:color0}
-background = ${xrdb:background}
+primary = #44475A
+background = #2D303A
 foreground = #F8F8F2
 foreground-alt = #F8F8F2
 secondary = #44475A

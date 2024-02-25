@@ -16,7 +16,8 @@ exec --no-startup-id startx > /dev/null 2>&1
 # Border
 default_border none
 default_floating_border none
-# for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 0
+for_window [class="Alacritty"] border pixel 4
 
 # Gaps - i3 v4.22
 gaps inner 20px
@@ -36,7 +37,7 @@ for_window [window_role="PictureInPicture"] sticky enable
 exec_always --no-startup-id "setxkbmap -layout us -variant altgr-intl"
 
 # Feh wallpaper
-exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper.png
+exec_always --no-startup-id feh --bg-center --image-bg "#24282B" ~/dotfiles/wallpaper.png
 
 # RedShift
 # I'm setting my redshift manually
