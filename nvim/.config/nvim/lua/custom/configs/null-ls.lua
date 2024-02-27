@@ -10,6 +10,9 @@ local opts = {
     b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
     b.formatting.eslint_d.with { filetypes = { "typescript", "javascript" } },
 
+    -- Rust
+    b.formatting.rustfmt,
+
     -- Lua
     b.formatting.stylua,
 
