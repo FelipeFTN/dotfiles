@@ -20,8 +20,9 @@ for_window [class="^.*"] border pixel 0
 for_window [class="Alacritty"] border pixel 4
 
 # Gaps - i3 v4.22
-gaps inner 20px
+gaps inner 14px
 gaps outer 0px
+gaps top 45px
 
 # Default layout mode tab
 workspace_layout default

@@ -15,31 +15,27 @@
 ;==========================================================
 
 [colors]
-; primary = #44475A
-; background = #31304D
-; foreground = #F8F8F2
-; foreground-alt = #F8F8F2
-; secondary = #44475A
-; alert = #6272A4
-; error = #FF5555
 primary = #44475A
 background = #2D303A
 foreground = #F8F8F2
 foreground-alt = #F8F8F2
 secondary = #44475A
-alert = ${xrdb:color2}
-error = ${xrdb:color1}
+alert = #81a2be
+error = #cc6666
 
 [bar/main]
 monitor = ${env:MONITOR:}
 fixed-center = true
-width = 100%
+width = 99%
 height = 35
 radius = 6.0
 
-border-top-size = 17
-border-left-size = 17
-border-right-size = 17
+offset-x = 13px
+offset-y = 10px
+
+; border-top-size = 17
+; border-left-size = 17
+; border-right-size = 17
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -48,7 +44,8 @@ line-size = 3
 line-color = #f00
 
 border-size = 1
-border-color = #00000000
+; border-color = #00000000
+border-color = #44475A
 
 padding-left = 0
 padding-right = 2
@@ -67,7 +64,7 @@ modules-right = musicinfo memory cpu filesystem wlan eth battery pulseaudio-cont
 
 wm-restack = i3
 
-; override-redirect = true
+override-redirect = true
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
