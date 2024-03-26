@@ -14,12 +14,13 @@ local plugins = {
         dependencies = {
           "nvimtools/none-ls-extras.nvim",
         },
-        ft = "go",
+        lazy = false,
         opts = function()
           return require "custom.configs.null-ls"
         end,
       },
     },
+    lazy = false,
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
