@@ -12,6 +12,7 @@ M.treesitter = {
     "typescript",
     "tsx",
     "c",
+    "cpp",
     "markdown",
     "markdown_inline",
   },
@@ -45,7 +46,6 @@ M.mason = {
     "gofumpt",
     "goimports",
     "goimports-reviser",
-    "golines",
 
     -- Terraform
     "terraform-ls",
