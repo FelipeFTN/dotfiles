@@ -321,4 +321,6 @@ label = %output:0:62:%
 format-padding = 10
 format-foreground = ${xrdb:color8}
 
+click-left = playerctl play-pause
+
 ; vim:ft=dosini
