@@ -68,6 +68,10 @@ local plugins = {
     end,
     lazy = false,
   },
+  {
+    "github/copilot.vim",
+    lazy = false,
+  },
 }
 
 return plugins
