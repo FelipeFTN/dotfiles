@@ -19,6 +19,9 @@ default_floating_border none
 for_window [class="^.*"] border pixel 0
 for_window [class="Alacritty"] border pixel 4
 
+# Floating
+for_window [title="Calculator"] floating enable
+
 # Gaps - i3 v4.22
 gaps inner 14px
 gaps outer 0px
