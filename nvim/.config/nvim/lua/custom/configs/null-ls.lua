@@ -10,6 +10,8 @@ local opts = {
     -- b.formatting.eslint_d.with { filetypes = { "typescript", "javascript" } },
     require "none-ls.diagnostics.eslint_d", -- We are now using none-ls (new null-ls)
     b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- So prettier works only on these filetypes
+    null_ls.builtins.diagnostics.phpcs,
+    b.formatting.phpcsfixer,
 
     -- Rust
     -- b.formatting.rustfmt, -- Deprecated
