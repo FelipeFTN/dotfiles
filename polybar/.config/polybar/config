@@ -60,7 +60,7 @@ font-3 = "Noto Serif:size=11:weight=Regular;2"
 
 modules-left = i3
 modules-center = date
-modules-right = musicinfo memory cpu filesystem wlan eth battery pulseaudio-control-input pulseaudio-control-output
+modules-right = musicinfo notification memory cpu filesystem wlan eth battery pulseaudio-control-input pulseaudio-control-output
 
 wm-restack = i3
 
@@ -142,28 +142,6 @@ label-urgent-padding = 1
 
 ; Separator in between workspaces
 label-separator = "%{T3} "
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
@@ -323,4 +301,10 @@ format-foreground = ${xrdb:color8}
 
 click-left = playerctl play-pause
 
-; vim:ft=dosini
+[module/notification]
+type = custom/script
+exec = ~/.config/polybar/notification.sh
+label = "%output%"
+interval = 0
+format-foreground = ${xrdb:color8}
+click-left = ~/.config/polybar/notification.sh toggle
