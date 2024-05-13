@@ -4,3 +4,4 @@ export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/nano
 export VISUAL=nvim
 export EDITOR=nvim
+. "$HOME/.cargo/env"
