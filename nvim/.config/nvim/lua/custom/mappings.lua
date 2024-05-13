@@ -10,40 +10,23 @@ M.general = {
   },
 }
 
-M.dap = {
+-- Commands I want:
+-- :GoDebugStart
+-- :GoDebugContinue
+-- :GoDebugNext
+-- :GoDebugStep
+-- :GoDebugStepOut
+-- :GoDebugBreakpoint
+M.vim_go = {
   plugin = true,
   n = {
-    ["<leader>dc"] = { "<cmd>lua require'dap'.continue()<CR>", "continue" },
-    ["<leader>db"] = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "toggle breakpoint" },
-    ["<leader>dus"] = {
-      function()
-        local widgets = require "dap.ui.widgets"
-        local sidebar = widgets.sidebar(widgets.scopes)
-        sidebar.open()
-      end,
-      "open debugging sidebar",
-    },
+    ["<leader>ds"] = { ":GoDebugStart<CR>", "start debugging" },
+    ["<leader>dc"] = { ":GoDebugContinue<CR>", "continue" },
+    ["<leader>dn"] = { ":GoDebugNext<CR>", "next" },
+    ["<leader>di"] = { ":GoDebugStep<CR>", "step" },
+    ["<leader>do"] = { ":GoDebugStepOut<CR>", "step out" },
+    ["<leader>db"] = { ":GoDebugBreakpoint<CR>", "breakpoint" },
   },
 }
-
-M.dap_go = {
-  plugin = true,
-  n = {
-    ["<leader>dgt"] = {
-      function()
-        require("dap-go").debug_test()
-      end,
-      "debug go test",
-    },
-    ["<leader>dgl"] = {
-      function()
-        require("dap-go").debug_last()
-      end,
-      "debug last",
-    },
-  },
-}
-
--- more keybinds!
 
 return M

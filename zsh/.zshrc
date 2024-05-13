@@ -9,7 +9,9 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
 
-setxkbmap -layout us -variant altgr-intl
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  setxkbmap -layout us -variant altgr-intl
+fi
 
 # Use TMUX
 # if [ "$TMUX" = "" ]; then tmux; fi
@@ -41,6 +43,9 @@ alias help="compgen -c | fzf | xargs man"
 
 # Open files in Neovim
 alias nf="fd --type f | fzf -m --exact | xargs n"
+
+# Commit GPT
+alias cgpt='git commit -m "$(commitgpt)"'
 
 # List file size with device usage
 alias lsize="du -ah | head"
@@ -77,3 +82,9 @@ export PATH="$PATH:$HOME/.cargo/env"
 # XTerm-256color
 export TERM="xterm-256color"
 eval "$(zoxide init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/felipe.tenorio/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/felipe.tenorio/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/felipe.tenorio/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/felipe.tenorio/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
