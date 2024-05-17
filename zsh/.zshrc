@@ -68,6 +68,7 @@ fi
 # Go PATH
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/go/bin
 export GOPATH=$HOME/go
 
@@ -77,3 +78,6 @@ export PATH="$PATH:$HOME/.cargo/env"
 # XTerm-256color
 export TERM="xterm-256color"
 eval "$(zoxide init zsh)"
+
+# Start neofetch
+neofetch
