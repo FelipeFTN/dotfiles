@@ -20,6 +20,7 @@ background = #2D303A
 foreground = #F8F8F2
 foreground-alt = #F8F8F2
 secondary = #44475A
+information = #828282
 alert = #81a2be
 error = #cc6666
 
@@ -297,7 +298,7 @@ interval = 5
 format = <label>
 label = %output:0:62:%
 format-padding = 10
-format-foreground = ${xrdb:color8}
+format-foreground = ${colors.information}
 
 click-left = playerctl play-pause
 
