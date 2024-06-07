@@ -77,7 +77,12 @@ export PATH="$PATH:$HOME/.cargo/env"
 
 # XTerm-256color
 export TERM="xterm-256color"
+
+# Zoxide configuration
 eval "$(zoxide init zsh)"
+
+# Setup cursor path for QT applications to use
+export XCURSOR_PATH=~/.local/share/icons
 
 # Start neofetch
 neofetch

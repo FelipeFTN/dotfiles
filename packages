@@ -33,3 +33,9 @@ gnome-disk-utility
 yazi
 mpv
 zoxide
+pipewire
+pipewire-pulse
+pipewire-session-manager
+pipewire-alsa
+qjackctl
+wireplumber
