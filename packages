@@ -39,3 +39,4 @@ pipewire-session-manager
 pipewire-alsa
 qjackctl
 wireplumber
+polkit-gnome

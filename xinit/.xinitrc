@@ -5,6 +5,7 @@
 /usr/bin/pipewire &
 /usr/bin/pipewire-pulse &
 /usr/bin/pipewire-media-session &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Keyboard
 # setxkbmap -layout us,br  -option grp:ctrl_space_toggle
