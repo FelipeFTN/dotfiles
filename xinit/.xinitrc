@@ -4,7 +4,7 @@
 # Pipewire stuff - I don't know what I'm doing
 /usr/bin/pipewire &
 /usr/bin/pipewire-pulse &
-/usr/bin/pipewire-media-session &
+/usr/bin/wireplumber &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Keyboard

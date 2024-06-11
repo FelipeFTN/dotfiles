@@ -35,8 +35,8 @@ mpv
 zoxide
 pipewire
 pipewire-pulse
-pipewire-session-manager
 pipewire-alsa
 qjackctl
 wireplumber
 polkit-gnome
+noto-fonts
