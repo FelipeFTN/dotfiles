@@ -8,7 +8,7 @@ family = "Fira Code Nerd Font"
 style =  "Regular"
 
 [font]
-size = 10.0
+size = 8.0
 
 [colors]
 transparent_background_colors = true 
