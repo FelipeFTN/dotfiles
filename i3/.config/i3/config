@@ -24,15 +24,14 @@ exec --no-startup-id dex --autostart --environment i3
 # Border
 default_border none
 default_floating_border none
-for_window [class="^.*"] border pixel 0
-for_window [class="Alacritty"] border pixel 4
+# for_window [class="Alacritty"] border pixel 4
 
 # Floating
 for_window [title="Calculator"] floating enable
 
 # Gaps - i3 v4.22
-gaps inner 4px
-gaps outer 0px
+# gaps inner 4px
+# gaps outer 0px
 
 # Default layout mode tab
 workspace_layout default
@@ -65,7 +64,7 @@ bindsym Print exec --no-startup-id maim --format=png | xclip -selection clipboar
 bindsym Mod1+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png
 
-bindsym Mod1+period exec --no-startup-id /usr/bin/dmenu_emoji
+bindsym Mod1+period exec --no-startup-id ~/.local/bin/dmenu_emoji
 
 # Firefox
 bindsym Mod1+Ctrl+f exec firefox
