@@ -1,6 +1,9 @@
 # MacOs Files
 .DS_Store
 
+# Yay build directory
+yay/
+
 # NeoVim - Not working
 **/packer_compiled.lua
 

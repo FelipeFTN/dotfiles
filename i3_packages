@@ -1,18 +1,9 @@
 zsh
-discord telegram-desktop steam
-rofi
 neovim
 firefox
 stow
-polybar
-picom
 alacritty
-rofi
-rofi-emoji
-rofi-calc
-yay
 pavucontrol
-pulseaudio
 python3
 python-pip
 feh
@@ -25,9 +16,7 @@ xclip
 copyq
 xdotool
 xss-lock
-gamemode
 lxappearance
 playerctl
-dex
 dunst
 pcmanfm-gtk3
