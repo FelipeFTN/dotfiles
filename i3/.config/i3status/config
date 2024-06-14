@@ -7,26 +7,31 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-        colors = true
-        interval = 5
+  colors = true
+  interval = 5
 }
 
 order += "tztime local"
 order += "battery all"
 order += "disk /"
+order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "memory"
 order += "wireless _first_"
 order += "ethernet _first_"
 
 wireless _first_ {
-        format_up = "%essid - %quality %ip"
-        format_down = ""
+  format_up = "%essid - %quality %ip"
+  format_down = ""
 }
 
 ethernet _first_ {
-        format_up = "%ip (%speed)"
-        format_down = ""
+  format_up = "%ip (%speed)"
+  format_down = ""
+}
+
+cpu_temperature 0 {
+  format = "CPU: %degrees °C"
 }
 
 cpu_usage {
@@ -36,24 +41,24 @@ cpu_usage {
 }
 
 battery all {
-        format = "%status %percentage %remaining"
+  format = "%status %percentage %remaining"
 }
 
 disk "/" {
-        format = "disk: %avail"
+  format = "disk: %avail"
 }
 
 load {
-        format = "%1min"
+  format = "%1min"
 }
 
 memory {
-        format = "used: %used | available: %available"
-        threshold_degraded = "1G"
+  format = "used: %used | available: %available"
+  threshold_degraded = "1G"
 	threshold_critical = "500Mib"
-        format_degraded = "used: %used | available: %available"
+  format_degraded = "used: %used | available: %available"
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+  format = "%Y-%m-%d %H:%M:%S"
 }

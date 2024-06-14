@@ -30,7 +30,7 @@ default_floating_border none
 for_window [title="Calculator"] floating enable
 
 # Gaps - i3 v4.22
-# gaps inner 4px
+# gaps inner 16px
 # gaps outer 0px
 
 # Default layout mode tab
