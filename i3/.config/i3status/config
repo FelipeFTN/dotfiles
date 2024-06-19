@@ -14,7 +14,6 @@ general {
 order += "tztime local"
 order += "battery all"
 order += "disk /"
-order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "memory"
 order += "wireless _first_"
@@ -28,10 +27,6 @@ wireless _first_ {
 ethernet _first_ {
   format_up = "%ip (%speed)"
   format_down = ""
-}
-
-cpu_temperature 0 {
-  format = "CPU: %degrees °C"
 }
 
 cpu_usage {
