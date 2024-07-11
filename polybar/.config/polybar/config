@@ -59,7 +59,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = "Noto Serif:size=11:weight=Regular;2"
 
-modules-left = i3
+modules-left = i3 tray
 modules-center = date
 modules-right = musicinfo notification memory cpu filesystem wlan eth battery pulseaudio-control-input pulseaudio-control-output
 
