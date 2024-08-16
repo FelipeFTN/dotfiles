@@ -15,6 +15,7 @@ local servers = {
   "rust_analyzer",
   "phpactor",
   "gopls",
+  "zls",
 }
 
 for _, lsp in ipairs(servers) do

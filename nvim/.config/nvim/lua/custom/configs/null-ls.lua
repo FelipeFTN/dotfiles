@@ -16,6 +16,9 @@ local opts = {
     -- Rust
     -- b.formatting.rustfmt, -- Deprecated
 
+    -- Zig
+    b.formatting.zigfmt,
+
     -- Lua
     b.formatting.stylua,
 
