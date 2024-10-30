@@ -78,6 +78,7 @@ export GOPATH=$HOME/go
 
 # Rust
 export PATH="$PATH:$HOME/.cargo/env"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # XTerm-256color
 export TERM="xterm-256color"
