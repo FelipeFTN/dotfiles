@@ -65,8 +65,8 @@ bindsym XF86PowerOff exec rofi -show power-menu -modi power-menu:rofi-power-menu
 # Alsamixer
 bindsym $mod+Ctrl+m exec alacritty -e 'alsamixer'
 
-# Ranger - File Manager
-bindsym $mod+Shift+f exec alacritty -e 'ranger'
+# Yazi - File Manager
+bindsym $mod+Shift+f exec alacritty -e 'yazi'
 
 # Firefox
 bindsym $mod+Ctrl+f exec firefox
