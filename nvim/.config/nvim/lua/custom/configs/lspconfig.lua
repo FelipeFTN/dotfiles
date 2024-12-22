@@ -54,7 +54,7 @@ lspconfig.terraformls.setup {
 -- Clangd
 lspconfig.clangd.setup {
   on_attach = on_attach,
-  capabilities = { offsetEncoding = { "utf-16" } },
+  capabilities = { offsetEncoding = { "utf-8", "utf-16" } },
 }
 
 lspconfig.rust_analyzer.setup {
