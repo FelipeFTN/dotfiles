@@ -227,7 +227,7 @@ label-padding = 0
 exec = pulseaudio-control --icons-volume " , " --icon-muted " " --node-nicknames-from "device.nothing" listen
 click-right = exec pavucontrol &
 click-left = pulseaudio-control togmute
-click-middle = pulseaudio-control --node-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-node
+click-middle = pulseaudio-control next-node
 scroll-up = pulseaudio-control --volume-max 130 up
 scroll-down = pulseaudio-control --volume-max 130 down
 
@@ -242,7 +242,7 @@ label-foreground = ${colors.foreground}
 exec = pulseaudio-control  --node-type input --icons-volume "" --icon-muted " " --node-blacklist "*.monitor" --node-nicknames-from "device.nothing" listen
 click-right = exec pavucontrol &
 click-left = pulseaudio-control --node-type input togmute
-click-middle = pulseaudio-control --node-type input next-node
+click-middle = pulseaudio-control --node-blacklist "*.monitor" --node-type input next-node
 scroll-up = pulseaudio-control --node-type input --volume-max 130 up
 scroll-down = pulseaudio-control --node-type input --volume-max 130 down
 
