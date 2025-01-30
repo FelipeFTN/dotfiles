@@ -85,6 +85,17 @@ local plugins = {
     "github/copilot.vim",
     lazy = false,
   },
+  -- Lua LÖVE2D
+  {
+    "S1M0N38/love2d.nvim",
+    cmd = "LoveRun",
+    opts = {},
+    keys = {
+      -- { "<leader>v", ft = "lua", desc = "LÖVE" },
+      { "<leader>lr", "<cmd>LoveRun<cr>", ft = "lua", desc = "Run LÖVE" },
+      { "<leader>ll", "<cmd>LoveStop<cr>", ft = "lua", desc = "Stop LÖVE" },
+    },
+  },
 }
 
 return plugins
