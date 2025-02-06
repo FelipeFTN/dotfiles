@@ -1,5 +1,5 @@
 stow
-zathura
+flameshot
 neovim
 tmux
 fd
@@ -46,3 +46,6 @@ xournalpp
 thunar
 thunar-archive-plugin
 git-delta
+discord
+telegram-desktop
+steam
