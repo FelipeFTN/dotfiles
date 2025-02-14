@@ -45,6 +45,14 @@ lspconfig.gopls.setup {
   },
 }
 
+-- Zig
+lspconfig.zls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "zls" },
+  filetypes = { "zig", "zir" },
+}
+
 -- Terraform
 lspconfig.terraformls.setup {
   cmd = { "terraform-ls", "serve" },
