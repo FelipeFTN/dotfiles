@@ -84,5 +84,23 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
+-- EsLint
+lspconfig.eslint.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "vscode-eslint-language-server", "--stdio" },
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "vue",
+    "svelte",
+    "astro",
+  },
+}
+
 --
 -- lspconfig.pyright.setup { blabla}

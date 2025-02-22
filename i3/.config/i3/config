@@ -31,7 +31,7 @@ gaps top 45px
 workspace_layout default
 
 # Popups during fullscreen mode
-popup_during_fullscreen all
+popup_during_fullscreen smart
 
 # Smart gaps
 smart_gaps off

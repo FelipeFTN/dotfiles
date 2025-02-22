@@ -21,14 +21,7 @@ M.mappings = require "custom.mappings"
 
 -- Rust dioxus workaround
 vim.opt_local.backupcopy = "yes"
--- local rust_group = vim.api.nvim_create_augroup("rust_group", {})
--- vim.api.nvim_create_autocmd({ "FileType" }, {
---   pattern = "rust",
---   callback = function()
---     vim.opt_local.backupcopy = "yes"
---   end,
---   group = rust_group,
--- })
+vim.g.zig_fmt_autosave = 0
 
 -- Options
 opt.wrap = false
