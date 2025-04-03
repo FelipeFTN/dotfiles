@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import mutagen
+from mutagen.easyid3 import EasyID3
+from mutagen.mp3 import MP3
+
+def create_m3u_playlist(directory_path, playlist_name):
+    # Output file will be playlist_name.m3u
+    output_m3u = f"{playlist_name}.m3u"
+    
+    # List to store music files
+    music_files = []
+    
+    # Check if directory exists
+    if not os.path.isdir(directory_path):
+        print(f"Error: Directory '{directory_path}' does not exist")
+        sys.exit(1)
+    
+    # Walk through directory and find .mp3 files
+    for root, _, files in os.walk(directory_path):
+        for file in files:
+            if file.lower().endswith('.mp3'):
+                full_path = os.path.join(root, file)
+                # Get relative path from the input directory
+                rel_path = os.path.relpath(full_path, directory_path)
+                music_files.append((rel_path, full_path))
+    
+    if not music_files:
+        print(f"No MP3 files found in '{directory_path}'")
+        sys.exit(1)
+    
+    # Write M3U file
+    with open(output_m3u, 'w', encoding='utf-8') as m3ufile:
+        # Write header
+        m3ufile.write("#EXTM3U\n")
+        m3ufile.write("#EXTENC:UTF-8\n")
+        m3ufile.write(f"#PLAYLIST:{playlist_name}\n")
+        
+        # Process each music file
+        for rel_path, full_path in music_files:
+            try:
+                # Get metadata
+                audio = MP3(full_path, ID3=EasyID3)
+                duration = int(audio.info.length * 1000)  # Convert to milliseconds
+                title = audio.get('title', [os.path.splitext(os.path.basename(full_path))[0]])[0]
+                artist = audio.get('artist', ['Unknown Artist'])[0]
+                album = audio.get('album', ['Unknown Album'])[0]
+                # Using a default genre since it's not always in MP3 tags
+                genre = audio.get('genre', ['Unknown Genre'])[0]
+                
+                # Write track information
+                m3ufile.write(f"#EXTINF:{duration},{title}\n")
+                m3ufile.write(f"#EXTALB:{album}\n")
+                m3ufile.write(f"#EXTART:{artist}\n")
+                m3ufile.write(f"#EXTGEN:{genre}\n")
+                m3ufile.write(f"./{full_path}\n")
+                
+            except Exception as e:
+                print(f"Warning: Could not process {rel_path}: {str(e)}")
+                # Write basic entry if metadata fails
+                m3ufile.write(f"#EXTINF:-1,{os.path.splitext(os.path.basename(rel_path))[0]}\n")
+                m3ufile.write("#EXTALB:Unknown Album\n")
+                m3ufile.write("#EXTART:Unknown Artist\n")
+                m3ufile.write("#EXTGEN:Unknown Genre\n")
+                m3ufile.write(f"./{full_path}\n")
+    
+    print(f"Playlist created successfully!")
+    print(f"Found {len(music_files)} MP3 files")
+    print(f"M3U file saved as: {output_m3u}")
+
+def main():
+    # Check command line arguments
+    if len(sys.argv) < 2:
+        # List all directories in the current directory
+        directories = [d for d in os.listdir('.') if os.path.isdir(d) and d[0] != '.']
+        for d in directories:
+            # Default playlist name is the directory name
+            directory_path = f"./{d}"
+            print(f"Directory: {directory_path}; Playlist Name: {d}")
+            create_m3u_playlist(directory_path, d)
+        sys.exit(0)
+
+    directory_path = sys.argv[1]
+    # Default playlist name is the directory name
+    playlist_name = os.path.basename(directory_path)
+
+    # Default playlist name is the directory name
+    playlist_name = os.path.basename(directory_path)
+
+    if len(sys.argv) > 2:
+        playlist_name = sys.argv[2]
+    
+    create_m3u_playlist(directory_path, playlist_name)
+
+if __name__ == "__main__":
+    main()
