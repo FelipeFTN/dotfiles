@@ -21,6 +21,8 @@ for_window [class="Alacritty"] border pixel 4
 
 # Floating
 for_window [title="Calculator"] floating enable
+for_window [class="Lutris"] floating enable
+for_window [class="feh"] floating enable
 
 # Gaps - i3 v4.22
 gaps inner 14px
@@ -31,7 +33,7 @@ gaps top 45px
 workspace_layout default
 
 # Popups during fullscreen mode
-popup_during_fullscreen smart
+popup_during_fullscreen all
 
 # Smart gaps
 smart_gaps off
