@@ -2,14 +2,18 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(
+  "git",
+  "zsh-autosuggestions",
+  "zsh-syntax-highlighting",
+  "zsh-completions",
+)
 
-# Installation: git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+# HyDE is managing this for me
+# source $ZSH/oh-my-zsh.sh
 
-source $ZSH/oh-my-zsh.sh
-
-setxkbmap -layout us -variant altgr-intl
+# Keyboard Variant
+# setxkbmap -layout us -variant altgr-intl
 
 # Use TMUX
 # if [ "$TMUX" = "" ]; then tmux; fi
@@ -86,4 +90,5 @@ eval "$(zoxide init zsh)"
 export XCURSOR_PATH=~/.local/share/icons
 
 # Start neofetch
-neofetch
+# neofetch
+fastfetch --logo arch
