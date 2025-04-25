@@ -29,7 +29,7 @@ alias dotfiles="cd ~/dotfiles/ && nvim ~/dotfiles"
 alias dotnvim="cd ~/dotfiles/nvim/.config/nvim && nvim ."
 
 # i3 setup
-alias doti3="cd ~/.config/i3 && nvim ~/.config/i3/config"
+alias dothypr="cd ~/.config/hypr && nvim ~/.config/hypr"
 
 # zsh config
 alias dotzsh="cd ~/ && nvim ~/.zshrc"
