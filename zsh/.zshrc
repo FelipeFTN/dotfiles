@@ -28,8 +28,11 @@ alias dotfiles="cd ~/dotfiles/ && nvim ~/dotfiles"
 # Neovim config
 alias dotnvim="cd ~/dotfiles/nvim/.config/nvim && nvim ."
 
-# i3 setup
+# Hyprland config
 alias dothypr="cd ~/.config/hypr && nvim ~/.config/hypr"
+
+# WayBar config
+alias dotbar="cd ~/.config/waybar && nvim ~/.config/waybar"
 
 # zsh config
 alias dotzsh="cd ~/ && nvim ~/.zshrc"
