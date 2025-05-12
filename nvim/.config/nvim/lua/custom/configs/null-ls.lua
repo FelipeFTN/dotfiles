@@ -9,9 +9,12 @@ local opts = {
     -- b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
     -- b.formatting.eslint_d.with { filetypes = { "typescript", "javascript" } },
     -- require "none-ls.diagnostics.eslint_d", -- We are now using none-ls (new null-ls)
-    b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- So prettier works only on these filetypes
-    null_ls.builtins.diagnostics.phpcs,
-    b.formatting.phpcsfixer,
+    b.formatting.prettier.with { -- So prettier works only on these filetypes
+      filetypes = { "html", "markdown", "css" },
+    },
+    b.diagnostics.rubocop,
+    -- b.diagnostics.phpcs,
+    -- b.formatting.phpcsfixer,
 
     -- Rust
     -- b.formatting.rustfmt, -- Deprecated
