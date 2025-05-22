@@ -18,7 +18,7 @@
 
 	"modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","custom/r_end","custom/padd","custom/l_end", "tray","custom/r_end"],
 	"modules-center": ["custom/padd","custom/l_end","idle_inhibitor","clock", "custom/hyprsunset", "custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end", "custom/notifications", "cpu", "memory", "pulseaudio", "pulseaudio#microphone", "custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end", "custom/notifications", "cpu", "memory", "pulseaudio", "pulseaudio#microphone", "battery", "custom/power","custom/r_end","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
@@ -176,6 +176,19 @@
         "on-click": "kitty btop",
         "on-click-right": "gnome-system-monitor",
         "tooltip-format": "{used}/{total}MB"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
     "custom/power": {

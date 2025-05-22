@@ -9,7 +9,7 @@
 corner_radius = 10
 icon_corner_radius = 10
 dmenu = /usr/bin/rofi -config notification -dmenu -p dunst:
-icon_theme = "Tela-circle-dracula,Tela-circle-green,Tela-circle-grey,Tela-circle-purple,Nordzy,Wallbash-Icon,Tela-circle-pink,hicolor,Tela-circle-yellow,Gruvbox-Plus-Dark,Tela-circle-blue,Tela-circle-black,Tela-circle-dracula"
+icon_theme = "Tela-circle-dracula,Nordzy,Wallbash-Icon,Tela-circle-black,Tela-circle-grey,Tela-circle-yellow,Tela-circle-pink,Tela-circle-purple,Gruvbox-Plus-Dark,Tela-circle-dracula,Tela-circle-green,Tela-circle-blue"
 
 
 # [Type-1]
@@ -89,8 +89,8 @@ ignore_dbusclose = false
 force_xwayland = false
 force_xinerama = false
 mouse_left_click = do_action, close_current
-mouse_middle_click = close_all
-mouse_right_click = close_current
+mouse_middle_click = context_all 
+mouse_right_click = context, close_current
 [experimental]
 per_monitor_dpi = true
 [slack]
@@ -120,15 +120,15 @@ dmenu = /usr/bin/rofi -config notification -dmenu -p dunst:
 
 
 [urgency_low]
-    background = "#A3656880"
-    foreground = "#FFCCCEE6"
-    frame_color = "#A3656803"
+    background = "#A3658A80"
+    foreground = "#FFCCEAE6"
+    frame_color = "#A3658A03"
     icon = "/home/felipeftn/.local/share/icons/Wallbash-Icon/hyprdots.svg"
     timeout = 5
 
 [urgency_normal]
-    background = "#6B3A4180"
-    foreground = "#FFCCD4E6"
-    frame_color = "#6B3A4103"
+    background = "#593A6B80"
+    foreground = "#EDCCFFE6"
+    frame_color = "#593A6B03"
     icon = "/home/felipeftn/.local/share/icons/Wallbash-Icon/hyprdots.svg"
     timeout = 5
