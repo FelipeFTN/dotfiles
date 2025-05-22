@@ -68,6 +68,10 @@ local plugins = {
     "github/copilot.vim",
     lazy = false,
   },
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+  },
   -- LaTeX
   {
     "lervag/vimtex",
