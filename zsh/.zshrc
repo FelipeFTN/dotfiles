@@ -2,22 +2,8 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-plugins=(
-  "git",
-  "zsh-autosuggestions",
-  "zsh-syntax-highlighting",
-  "zsh-completions",
-)
-
-# HyDE is managing this for me
-# source $ZSH/oh-my-zsh.sh
-
 # Keyboard Variant
 # setxkbmap -layout us -variant altgr-intl
-
-# Use TMUX
-# if [ "$TMUX" = "" ]; then tmux; fi
-if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
 
 # MySecurity
 alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
@@ -91,7 +77,3 @@ eval "$(zoxide init zsh)"
 
 # Setup cursor path for QT applications to use
 export XCURSOR_PATH=~/.local/share/icons
-
-# Start neofetch
-# neofetch
-fastfetch --logo arch
