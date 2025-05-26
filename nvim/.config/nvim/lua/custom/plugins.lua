@@ -73,6 +73,10 @@ local plugins = {
     lazy = false,
   },
   -- LaTeX
+  -- Need Arch packages:
+  -- texlive-bin;
+  -- texlive-binextra
+  -- texlive-latexrecommended
   {
     "lervag/vimtex",
     lazy = false,
