@@ -1,0 +1,6 @@
+[Unit]
+Description=Check for MCE hardware errors
+
+[Service]
+Type=oneshot
+ExecStart=/home/felipeftn/dotfiles/health.sh
