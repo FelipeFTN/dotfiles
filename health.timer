@@ -1,9 +1,9 @@
 [Unit]
-Description=Run MCE Health Check every 30 minutes
+Description=Run MCE Health Check every 5 minutes
 
 [Timer]
 OnBootSec=2min
-OnUnitActiveSec=30min
+OnUnitActiveSec=5min
 Persistent=true
 
 [Install]
