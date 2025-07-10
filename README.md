@@ -16,7 +16,11 @@ Pretty simple...
 - `setup.sh` --> It will install everything I need.
 - `neovim.sh` --> Setup my neovim environment.
 - `ssh-key.sh` --> Generates a new SSH key (for GitHub).
-- `health.sh` --> A simple script to check the health of my CPU and log errors ([systemd timer](./health.md)).
+
+## Jobs
+
+- `health.sh` --> A simple script to check the health of my CPU and log errors ([systemd timer](./jobs/README.md)).
+- `battery.sh` --> A simple script to check the battery of my Thinkpad ([systemd timer](./jobs/README.md))
 
 OBS: Do not forget to set a ssh key before running `neovim.sh`
 

@@ -1,0 +1,6 @@
+[Unit]
+Description=Check for battery critically low
+
+[Service]
+Type=oneshot
+ExecStart=/home/felipeftn/dotfiles/jobs/battery.sh

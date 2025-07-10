@@ -1,4 +1,6 @@
-# Health Check Service
+# Jobs :bricks:
+
+## Health Check Service
 
 This is a simple program i built to check the health of my CPU and get errors like this:
 
@@ -38,3 +40,12 @@ This is just like a cronjob, but made to run with sustemd timer services
 2. Place the **health.timer** file in `~/.config/systemd/user/health.timer`
 3. Enable the service with `systemctl --user daemon-reexec && systemctl --user enable --now health.timer`
 4. Check the status with `systemctl --user status health.service` || `systemctl --user list-timers`
+
+## Battery Percentage Service
+
+Just a quick low battery warning script
+
+1. Place the **battery.service** file in `~/.config/systemd/user/battery.service`
+2. Place the **battery.timer** file in `~/.config/systemd/user/battery.timer`
+3. Enable the service with `systemctl --user daemon-reexec && systemctl --user enable --now battery.timer`
+4. Check the status with `systemctl --user status battery.service` || `systemctl --user list-timers`
