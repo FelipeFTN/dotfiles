@@ -1,6 +1,0 @@
-swipe:
-  3:
-    left:
-      command: "ydotool key super+ctrl+h"
-    right:
-      command: "ydotool key super+ctrl+l"
