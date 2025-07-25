@@ -23,6 +23,9 @@ alias dotbar="cd ~/.config/waybar && nvim ~/.config/waybar"
 # zsh config
 alias dotzsh="cd ~/ && nvim ~/.zshrc"
 
+# sway config
+alias dotsway="cd ~/ && nvim ~/.config/sway/config"
+
 # cbonsai
 alias ctree="cbonsai --seed 119 --live --infinite --base 2"
 

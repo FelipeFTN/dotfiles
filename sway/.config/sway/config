@@ -21,7 +21,7 @@ set $menu wmenu-run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/dotfiles/wallpaper.png fill
 #
 # Example configuration:
 #
@@ -52,11 +52,12 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #       natural_scroll enabled
 #       middle_emulation enabled
 #   }
-#
-#   input type:keyboard {
-#       xkb_layout "eu"
-#   }
-#
+
+  input type:keyboard {
+      xkb_layout "us"
+      xkb_variant "altgr-intl"
+  }
+
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
 
@@ -70,8 +71,11 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # Kill focused window
     bindsym $mod+q kill
 
+    # Start Firefox
+    bindsym $mod+Shift+b exec firefox
+  
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+a exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -80,8 +84,11 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # mouse button for dragging.
     floating_modifier $mod normal
 
+    # Autostart
+    exec --no-startup-id nm-applet
+
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -160,7 +167,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    bindsym $mod+u focus parent
 #
 # Scratchpad:
 #
@@ -216,17 +223,11 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
+    position bottom
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    status_command i3status -c ~/.config/i3/i3status.conf
 }
 
 include /etc/sway/config.d/*
