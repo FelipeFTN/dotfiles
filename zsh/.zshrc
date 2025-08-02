@@ -80,3 +80,4 @@ eval "$(zoxide init zsh)"
 
 # Setup cursor path for QT applications to use
 export XCURSOR_PATH=~/.local/share/icons
+export XDG_CONFIG_HOME="$HOME/.config"

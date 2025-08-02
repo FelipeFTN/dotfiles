@@ -1,8 +1,0 @@
-# MacOs Files
-.DS_Store
-
-# Neovim Plugin
-plugin/*
-
-# Lazy lock
-lazy-lock.json
