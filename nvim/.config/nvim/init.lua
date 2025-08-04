@@ -13,6 +13,14 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_config = require "configs.lazy"
 
+-- Register the function to be called on VimEnter
+-- This function is used to open nvim-tree when Neovim starts
+-- and the user has not specified a file to open or if a directory is opened.
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = require "configs.nvim-tree",
+  desc = "Open nvim-tree on VimEnter if no file is specified or if a directory is opened",
+})
+
 -- load plugins
 require("lazy").setup({
   {
