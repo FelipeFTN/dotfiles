@@ -4,6 +4,7 @@ return {
   --   -- event = 'BufWritePre', -- uncomment for format on save
   --   opts = require "configs.conform",
   -- },
+  { import = "nvchad.blink.lazyspec" },
 
   {
     "neovim/nvim-lspconfig",
@@ -26,22 +27,6 @@ return {
       require "configs.lspconfig"
     end,
   },
-
-  -- override plugin configs
-  -- {
-  --   "williamboman/mason.nvim",
-  --   opts = overrides.mason,
-  -- },
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   opts = overrides.treesitter,
-  -- },
-  --
-  -- {
-  --   "nvim-tree/nvim-tree.lua",
-  --   opts = overrides.nvimtree,
-  -- },
-
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -100,5 +85,4 @@ return {
       { "<leader>ll", "<cmd>LoveStop<cr>", ft = "lua", desc = "Stop LÖVE" },
     },
   },
-
 }
