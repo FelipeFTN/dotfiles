@@ -21,6 +21,9 @@ vim.api.nvim_create_autocmd("VimEnter", {
   desc = "Open nvim-tree on VimEnter if no file is specified or if a directory is opened",
 })
 
+-- no wrap
+vim.opt.wrap = false
+
 -- load plugins
 require("lazy").setup({
   {
