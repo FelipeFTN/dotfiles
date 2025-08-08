@@ -85,9 +85,9 @@ plugins=(
     "sudo"
     "tmux"
     "git"                     # (default)
-    # "zsh-autosuggestions"     # (default)
-    # "zsh-syntax-highlighting" # (default)
-    # "zsh-completions"         # (default)
+    "zsh-autosuggestions"     # (default)
+    "zsh-syntax-highlighting" # (default)
+    "zsh-completions"         # (default)
 )
 
 source $ZSH/oh-my-zsh.sh
