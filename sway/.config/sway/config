@@ -71,8 +71,8 @@ output * bg ~/dotfiles/wallpaper.png fill
     # Kill focused window
     bindsym $mod+q kill
 
-    # Start Firefox
-    bindsym $mod+Shift+b exec firefox
+    # Start Browser
+    bindsym $mod+b exec waterfox
   
     # Start your launcher
     bindsym $mod+a exec $menu
@@ -152,7 +152,7 @@ output * bg ~/dotfiles/wallpaper.png fill
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    # bindsym $mod+b splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles

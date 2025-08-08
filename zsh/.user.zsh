@@ -9,7 +9,7 @@
 
 # Use TMUX
 # if [ "$TMUX" = "" ]; then tmux; fi
-if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
+# if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
 
 #  Plugins 
 plugins=(

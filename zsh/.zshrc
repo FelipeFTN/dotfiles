@@ -1,9 +1,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
+if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
 
-# Keyboard Variant
-# setxkbmap -layout us -variant altgr-intl
+ZSH_THEME="robbyrussell"
 
 # MySecurity
 alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
@@ -81,3 +80,14 @@ eval "$(zoxide init zsh)"
 # Setup cursor path for QT applications to use
 export XCURSOR_PATH=~/.local/share/icons
 export XDG_CONFIG_HOME="$HOME/.config"
+
+plugins=(
+    "sudo"
+    "tmux"
+    "git"                     # (default)
+    # "zsh-autosuggestions"     # (default)
+    # "zsh-syntax-highlighting" # (default)
+    # "zsh-completions"         # (default)
+)
+
+source $ZSH/oh-my-zsh.sh
