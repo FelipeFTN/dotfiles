@@ -1,3 +1,3 @@
-set softtabstop=4
-set sw=4
-set ts=4
+set softtabstop=2
+set sw=2
+set ts=2

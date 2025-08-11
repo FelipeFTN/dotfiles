@@ -9,7 +9,12 @@
 [delta]
   navigate = true
 [merge]
-  conflictstyle = diff3
+	tool = "nvim"
+[mergetool]
+	keepBackup = false
+	prompt = false
+[mergetool "nvim"]
+	cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
 [diff]
   colorMoved = default
 [diff]
