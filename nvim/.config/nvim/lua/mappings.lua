@@ -37,3 +37,21 @@ map("n", "<leader>ca", function()
   vim.lsp.buf.code_action()
 end, { desc = "LSP code action" })
 
+-- Git
+map("n", "<leader>gs", "<cmd> Git <cr>", { desc = "Git status" })
+map("n", "<leader>gc", "<cmd> Git commit <cr>", { desc = "Git commit" })
+map("n", "<leader>gp", "<cmd> Git push <cr>", { desc = "Git push" })
+map("n", "<leader>gl", "<cmd> Git pull <cr>", { desc = "Git pull" })
+map("n", "<leader>gd", "<cmd> Git diff <cr>", { desc = "Git diff" })
+
+map("n", "<leader>gb", function()
+  package.loaded.gitsigns.blame_line()
+end, { desc = "Git blame" })
+
+map("n", "<leader>td", function()
+  package.loaded.gitsigns.toggle_deleted()
+end, { desc = "Toggle deleted lines" })
+
+map("n", "<leader>gD", function()
+  package.loaded.gitsigns.diffthis("~")
+end, { desc = "Git diff this" })
