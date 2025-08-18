@@ -6,7 +6,7 @@ local util = require "lspconfig/util"
 
 -- if you just want default config for the servers then put them in a table
 local servers =
-  { "html", "cssls", "tsserver", "clangd", "asm_lsp", "terraformls", "rust_analyzer", "phpactor", "gopls" }
+  { "html", "cssls", "ts_ls", "clangd", "asm_lsp", "terraformls", "rust_analyzer", "phpactor", "gopls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {

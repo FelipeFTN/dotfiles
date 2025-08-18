@@ -22,7 +22,7 @@ local opts = {
     -- Go
     b.formatting.gofumpt, -- mvdan.cc/gofumpt
     b.formatting.goimports_reviser, -- github.com/incu6us/goimports_reviser
-    b.formatting.golines, -- github.com/segmentio/golines - Annoying feature
+    -- b.formatting.golines, -- github.com/segmentio/golines - Annoying feature
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then
