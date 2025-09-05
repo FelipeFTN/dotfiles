@@ -55,3 +55,7 @@ end, { desc = "Toggle deleted lines" })
 map("n", "<leader>gD", function()
   package.loaded.gitsigns.diffthis("~")
 end, { desc = "Git diff this" })
+
+-- map("n", "K", function()
+--   vim.lsp.buf.hover()
+-- end, { desc = "LSP hover" })
