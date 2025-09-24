@@ -130,6 +130,9 @@ floating_modifier $mod normal
 
 # Autostart
 exec --no-startup-id nm-applet
+exec --no-startup-id corectrl
+exec --no-startup-id gammastep
+exec --no-startup-id blueman-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Reload the configuration file
@@ -270,7 +273,7 @@ for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disa
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position bottom
+    position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
