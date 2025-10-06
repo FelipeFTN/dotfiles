@@ -1,0 +1,22 @@
+[Default Applications]
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+x-scheme-handler/http=userapp-Waterfox-CSHVA3.desktop
+x-scheme-handler/https=userapp-Waterfox-CSHVA3.desktop
+x-scheme-handler/chrome=userapp-Waterfox-CSHVA3.desktop
+text/html=userapp-Waterfox-CSHVA3.desktop
+application/x-extension-htm=userapp-Waterfox-CSHVA3.desktop
+application/x-extension-html=userapp-Waterfox-CSHVA3.desktop
+application/x-extension-shtml=userapp-Waterfox-CSHVA3.desktop
+application/xhtml+xml=userapp-Waterfox-CSHVA3.desktop
+application/x-extension-xhtml=userapp-Waterfox-CSHVA3.desktop
+application/x-extension-xht=userapp-Waterfox-CSHVA3.desktop
+x-scheme-handler/about=waterfox.desktop
+x-scheme-handler/unknown=waterfox.desktop
+application/x-msdownload=wine.desktop
+x-scheme-handler/discord-472158403830218762=discord-472158403830218762.desktop
+
+[Added Associations]
+x-scheme-handler/http=userapp-Waterfox-CSHVA3.desktop;
+x-scheme-handler/https=userapp-Waterfox-CSHVA3.desktop;
+text/html=userapp-Waterfox-CSHVA3.desktop;
+application/x-msdownload=wine.desktop;
