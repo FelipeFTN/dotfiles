@@ -11,6 +11,6 @@ if uwsm check may-start && uwsm select; then
   exec uwsm start default
 fi
 
-# if uwsm check may-start; then
-#     exec uwsm start hyprland.desktop
-# fi
+if [[ "$DESKTOP_SESSION" == "gnome" ]]; then
+    export XDG_CURRENT_DESKTOP=GNOME
+fi
