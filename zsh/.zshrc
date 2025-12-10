@@ -4,11 +4,11 @@ if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
 
 ZSH_THEME="robbyrussell"
 
-# MySecurity
-alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
-
 # Dotfiles
 alias dotfiles="cd ~/dotfiles/ && nvim ~/dotfiles"
+
+# Neovim
+alias n="nvim"
 
 # Neovim config
 alias dotnvim="cd ~/dotfiles/nvim/.config/nvim && nvim ."
