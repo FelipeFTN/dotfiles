@@ -1,8 +1,24 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-if [ -t 0 ] && [[ -z $TMUX ]] && [[ $- = *i* ]]; then exec tmux; fi
-
 ZSH_THEME="robbyrussell"
+
+plugins=(
+    "sudo"
+    "tmux"
+    "git"                     # (default)
+    "zsh-autosuggestions"     # (default)
+    "zsh-syntax-highlighting" # (default)
+    "zsh-completions"         # (default)
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# Use TMUX
+# if [ "$TMUX" = "" ]; then tmux; fi
+if [ -t 0 ] && [[ -z "$TMUX" ]] && [[ $- = *i* ]]; then exec tmux; fi
+
+# MySecurity
+alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
 
 # Dotfiles
 alias dotfiles="cd ~/dotfiles/ && nvim ~/dotfiles"
@@ -80,14 +96,3 @@ eval "$(zoxide init zsh)"
 # Setup cursor path for QT applications to use
 export XCURSOR_PATH=~/.local/share/icons
 export XDG_CONFIG_HOME="$HOME/.config"
-
-plugins=(
-    "sudo"
-    "tmux"
-    "git"                     # (default)
-    "zsh-autosuggestions"     # (default)
-    "zsh-syntax-highlighting" # (default)
-    "zsh-completions"         # (default)
-)
-
-source $ZSH/oh-my-zsh.sh
