@@ -59,6 +59,9 @@ alias work="cd ~/Desktop/Work/"
 # Memos note taking
 alias memos="docker run -d --name memos -p 5230:5230 -v ~/.memos/:/var/opt/memos neosmemo/memos:stable"
 
+# yt-dlp mp3 downloader
+alias mp3='yt-dlp -t mp3 --embed-thumbnail --add-metadata --metadata-from-title "%(title)s" --parse-metadata "title:%(title)s" --parse-metadata "uploader:%(artist)s" --output "%(title)s.%(ext)s"'
+
 # Text Editor
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -79,6 +82,9 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 export GOPATH=$HOME/go
 
+# Python Path
+export PATH=$PATH:$HOME/Library/Python/3.13/bin
+
 # Rust
 export PATH="$PATH:$HOME/.cargo/env"
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -92,3 +98,10 @@ if [ -f '/Users/felipe.tenorio/Downloads/google-cloud-sdk/path.zsh.inc' ]; then 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/felipe.tenorio/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/felipe.tenorio/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
