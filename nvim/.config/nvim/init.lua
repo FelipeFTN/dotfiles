@@ -116,7 +116,7 @@ do
   -- Clear highlights on search when pressing <Esc> in normal mode
   --  See `:help hlsearch`
   vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-  vim.keymap.set('n', 'jk', '<Esc>')
+  vim.keymap.set('i', 'jk', '<Esc>')
   vim.keymap.set('n', ';', ':')
 
   -- Diagnostic Config & Keymaps
