@@ -23,6 +23,9 @@ require('neo-tree').setup {
     filtered_items = {
       hide_dotfiles = false,
       hide_hidden = false,
+      ignore_files = {
+        ".git/",
+      },
       never_show_by_pattern = { -- uses glob style patterns
         ".null-ls_*",
       },
