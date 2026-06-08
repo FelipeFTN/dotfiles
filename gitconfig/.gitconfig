@@ -3,11 +3,11 @@
 	name = FelipeFTN
 [core]
 	editor = nvim
-  pager = delta
-[interactive]
-  diffFilter = delta --color-only
-[delta]
-  navigate = true
+;   pager = delta
+; [interactive]
+;   diffFilter = delta --color-only
+; [delta]
+;   navigate = true
 [merge]
 	tool = "nvim"
 [mergetool]
