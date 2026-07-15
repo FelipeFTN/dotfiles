@@ -110,7 +110,7 @@ do
   -- See `:help 'confirm'`
   vim.o.confirm = true
 
-  -- [[ Basic Keymaps ]]
+  -- [[ Basic Keymaps | General Personal Keymaps ]]
   --  See `:help vim.keymap.set()`
 
   -- Clear highlights on search when pressing <Esc> in normal mode
@@ -118,6 +118,7 @@ do
   vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
   vim.keymap.set('i', 'jk', '<Esc>')
   vim.keymap.set('n', ';', ':')
+  vim.keymap.set('n', 's', 'c<leader>')
 
   -- Diagnostic Config & Keymaps
   --  See `:help vim.diagnostic.Opts`
@@ -712,13 +713,11 @@ do
   -- [[ Formatting ]]
   vim.pack.add { gh 'stevearc/conform.nvim' }
   vim.pack.add { gh 'ray-x/go.nvim' }
-  require("go").setup {}
-  local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*.go",
-    callback = function()
-      require('go.format').goimports()
-    end,
+  require('go').setup {}
+  local format_sync_grp = vim.api.nvim_create_augroup('GoFormat', {})
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    pattern = '*.go',
+    callback = function() require('go.format').goimports() end,
     group = format_sync_grp,
   })
 
@@ -748,7 +747,7 @@ do
       -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
-      javascript = { "prettierd", "prettier", stop_after_first = true },
+      javascript = { 'prettierd', 'prettier', stop_after_first = true },
     },
   }
 

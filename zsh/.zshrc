@@ -17,14 +17,14 @@ source $ZSH/oh-my-zsh.sh
 # if [ "$TMUX" = "" ]; then tmux; fi
 if [ -t 0 ] && [[ -z "$TMUX" ]] && [[ $- = *i* ]]; then exec tmux; fi
 
-# MySecurity
-alias mysecurity="sudo ./Desktop/MySecurity/bin/MySecurity"
-
 # Dotfiles
 alias dotfiles="cd ~/dotfiles/ && nvim ~/dotfiles"
 
 # Neovim
 alias n="nvim"
+
+# Syncthing background
+alias s="syncthing > /dev/null 2>&1 &!"
 
 # Neovim config
 alias dotnvim="cd ~/dotfiles/nvim/.config/nvim && nvim ."
@@ -58,9 +58,6 @@ alias lsize="du -ah | head"
 
 # Work directory
 alias work="cd ~/Desktop/Work/"
-
-# Memos note taking
-alias memos="docker run -d --name memos -p 5230:5230 -v ~/.memos/:/var/opt/memos neosmemo/memos:stable"
 
 # Text Editor
 export EDITOR="nvim"
