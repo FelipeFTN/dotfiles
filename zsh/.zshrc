@@ -67,6 +67,9 @@ export VISUAL="nvim"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
+# Python (trash package manager warning message)
+export PIP_BREAK_SYSTEM_PACKAGES=1
+
 # Export bin PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 if [ -d "$HOME/.local/bin" ] ; then
@@ -80,7 +83,6 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/go/bin
 export GOPATH=$HOME/go
-
 # Rust
 export PATH="$PATH:$HOME/.cargo/env"
 
