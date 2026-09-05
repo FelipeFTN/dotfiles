@@ -15,6 +15,7 @@ x-scheme-handler/unknown=waterfox.desktop
 application/x-msdownload=wine.desktop
 x-scheme-handler/discord-472158403830218762=discord-472158403830218762.desktop
 x-scheme-handler/logseq=Logseq OG.desktop
+x-scheme-handler/sweethome3d=sweet-home-3d.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 
 [Added Associations]
